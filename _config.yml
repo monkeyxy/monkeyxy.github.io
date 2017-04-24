@@ -1,0 +1,25 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+#relative_permalinks: true
+
+# Setup
+title:               BLOG
+tagline:             "Hey You! Don't Hurry."
+description:         "be responsible for yourself."
+url:                 https://chen-kaka.github.io/
+baseurl:             ''
+paginate:            1
+
+# About/contact
+author:
+  name:              kakachan
+  url:               https://github.com/chen-kaka
+  email:             chen-kaka@163.com
+
+# Custom vars
+version:             1.0.0
+
+# Gems
+gems:                [jekyll-paginate]
