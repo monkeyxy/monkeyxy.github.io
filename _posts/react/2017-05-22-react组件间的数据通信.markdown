@@ -1,0 +1,24 @@
+---
+title: React的组件间的数据通信
+date: '2017-05-22 17:00:00'
+categories: [
+front
+]
+layout: post
+author: xy
+---
+
+### React的组件间的数据通信
+
+*先来了解下props和state的概念以及区别*
+
+props:是不可变的。
+
+state:是可变的。
+
+#### 一、组件之间的交流方式
+
+1、<父组件>向<子组件>传值
+
+
+

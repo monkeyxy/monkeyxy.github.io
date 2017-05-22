@@ -19,11 +19,11 @@ author: xy
 
 1、getDefaultProps
 
-获取实例的默认属性，组件第一个实例被初始化CreateClass的时候调用，只调用一次
+获取实例的默认属性，组件第一个实例被初始化CreateClass的时候调用，只调用一次。返回值将会作为this.state的初始值。
 
 2、getInitialState
 
-获取每个实例的初始状态
+获取每个实例的初始状态。必须返回一个obj或者是null
 
 3、componentWillMount
 
@@ -39,7 +39,7 @@ author: xy
 
 1、componentWillReceiveProps
 
-将要接收属性的时候调用
+将要接收 <span style="border-bottom:2px solid #999">属性</span> 的时候调用。
 
 2、shouldComponentUpdate
 
@@ -57,16 +57,27 @@ author: xy
 
 可以修改DOM
 
+### 四、销毁和清理期
+
+1、componentWillUnmount
+
+该方法会再组件被移除之前调用。
+
+
+
 ![react的生命周期](../../images/react-life.png)
 
 ### 上代码！
 
         import React from 'react';
 
-        class Example React.Compent({//组件首字母必须大写
+        class Example React.Component({//组件首字母必须大写
             constructor(props){
                 super(props);//用super可访问父对象的函数
-                this._bind.apply(this,['func1','func2'])
+                this.state = {
+                    
+                }
+                this._bind.apply(this,['func1','func2'])//需要手动绑定函数
             }
 
             //render之前调用，业务逻辑都应该放在这里，如对state的操作等
