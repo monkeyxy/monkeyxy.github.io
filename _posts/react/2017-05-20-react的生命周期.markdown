@@ -1,0 +1,120 @@
+---
+title: React的生命周期
+date: '2017-05-20 12:00:00'
+updateAt: '2017-5-22 15:00:00'
+categories: [
+front
+]
+layout: post
+author: xy
+---
+
+### React 的生命周期的介绍
+
+#### 一、基本理论
+
+组件的本质是状态机，输入确定，输出一定确定
+
+### 二、初始化阶段
+
+1、getDefaultProps
+
+获取实例的默认属性，组件第一个实例被初始化CreateClass的时候调用，只调用一次
+
+2、getInitialState
+
+获取每个实例的初始状态
+
+3、componentWillMount
+
+组件即将被装载，渲染到页面上。render之前可做获取数据的一次最好修改状态的机会
+
+4、render
+
+组件生成虚拟DOM节点。只能访问props和state，render返回的只能是一个组件。
+
+5、componentDidMount
+
+### 三、运行中状态
+
+1、componentWillReceiveProps
+
+将要接收属性的时候调用
+
+2、shouldComponentUpdate
+
+组件接收新属性或者新状态的时候，判断是否做出改变，如果return false，则接收数据后不更新，阻止render
+
+3、componentWillUpdate
+
+不能修改属性或状态
+
+4、render
+
+只能访问props和state
+
+5、componentDidUpdate
+
+可以修改DOM
+
+![react的生命周期](../../images/react-life.png)
+
+### 上代码！
+
+        import React from 'react';
+
+        class Example React.Compent({//组件首字母必须大写
+            constructor(props){
+                super(props);//用super可访问父对象的函数
+                this._bind.apply(this,['func1','func2'])
+            }
+
+            //render之前调用，业务逻辑都应该放在这里，如对state的操作等
+            componentWillMount() {
+            }
+
+            //该方法发生在render方法之后。在该方法中，ReactJS会使用render生成返回的虚拟DOM对象来创建真实的DOM结构
+            componentDidMount() {
+            }
+
+            //更新阶段
+            componentWillReceiveProps() {
+            }
+
+            //是否需要更新
+            shouldComponentUpdate() {
+            }
+
+            //将要更新
+            componentWillUpdate() {
+            }
+
+            //更新完毕
+            componentDidUpdate() {
+            }
+
+            //4.销毁阶段
+            componentWillUnmount() {
+            }
+
+            // 处理点击事件
+            func1() {
+                console.log("add num");
+                this.setState({num:this.state.num+1});
+                this.setProps({name:"newName"});
+            }
+             //渲染并返回一个虚拟DOM
+            render() {
+                console.log("render");
+                return(
+                    <div> hello <strong> {this.props.name} </strong>
+                        <button onClick={this.func1}> hello <strong> {this.state.num} </strong></button>
+                    </div>
+                    );
+            }
+        });
+        export default Example;
+
+
+
+

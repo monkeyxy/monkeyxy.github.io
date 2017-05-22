@@ -1,0 +1,73 @@
+---
+title: 初识react
+date: '2017-05-19 17:00:00'
+updateAt: '2017-5-20 11:00:00'
+categories: [
+front
+]
+layout: post
+author: xy
+---
+
+### 一、React的简介
+
+> 在web开发中，总需要将变化的数据实时反应到UI上，这就需要对DOM进行操作。然而频繁或复杂的DOM操作通常是性能瓶颈产生的原因。react为此引入虚拟DOM的机制，解决了性能问题。
+
+
+* 1 **React不是一个MVC框架**
+
+    不是完整的MVC框架，最多可认为是MVC中的V(view)。主要做四件事情：前端控件组件化。利用props形成单向数据流。根据state的变化更新view。利用虚拟DOM来提升渲染性能。  ui = f(props,state)。
+
+* 2 **虚拟DOM**
+    
+    react在开发过程中，所有的DOM构造都是通过虚拟DOM进行的。当数据变化时，react会重新构建整个DOM树，并且react会将当前整个DOM树和上一次DOM树进行对比，找到DOM结构的变化，然后再将需要变化的部分进行实际的页面更新。（虚拟DOM是内存数据，性能极高）
+
+* 3 **Jsx语法**
+
+    HTML语言直接写在js中，不加任何引号，这就是JSX的语法。
+    
+    ```
+    let arr =['a','b','c'];
+    React.render( 
+                <div>{
+          arr.map(function(item){
+                return <div>{item}</div>
+            })
+        }</div>,
+            document.getElementById("container")
+        )
+    ```
+
+
+* 4 **组件化**
+
+    所谓组件，即封装起来的具有独立功能的UI部件。react推荐以组件的方式去重新思考UI构成，将UI上每个功能相对独立的模块定义成组件，然后将小的组件通过组合或者嵌套的方式构成大的组件，完成整体的UI构建。每个组件只关心自己部分的逻辑，彼此独立。
+    
+    *函数式组件*
+
+    ```
+        const MyComponent = React.createClass({ 
+            render: function(){ 
+                return<div className={this.props.className}/>;
+            }
+        })
+   
+    ```
+    es6 class的写法
+
+    ```
+        class MyComponent extends React.Compnent{
+            render() {
+                return <div className={this.props.className}/>;
+            }
+        }
+    ```  
+    React 0.14引入新语法来定义组件，使用属性作为参数的函数
+    ```
+    const MyComponent = props =>{
+        <div className={props.className}/>
+    }
+    ```  
+
+
+
