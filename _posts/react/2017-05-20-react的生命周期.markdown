@@ -65,7 +65,7 @@ author: xy
 
 
 
-![react的生命周期](../../images/react-life.png)
+![react的生命周期](/images/react-life.png)
 
 ### 上代码！
 
