@@ -1,5 +1,5 @@
 ---
-title: Redux的一等公民——组件
+title: React的一等公民——组件
 date: '2017-05-24 13:49:00'
 categories: [
 front
