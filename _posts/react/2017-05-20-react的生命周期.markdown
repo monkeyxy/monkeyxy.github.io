@@ -1,5 +1,5 @@
 ---
-title: React的生命周期
+title: React篇二 React的生命周期
 date: '2017-05-20 12:00:00'
 updateAt: '2017-5-22 15:00:00'
 categories: [

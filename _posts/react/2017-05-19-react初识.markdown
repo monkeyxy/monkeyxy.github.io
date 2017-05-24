@@ -1,5 +1,5 @@
 ---
-title: 初识react
+title: React篇一 初识react
 date: '2017-05-19 17:00:00'
 updateAt: '2017-5-20 11:00:00'
 categories: [
