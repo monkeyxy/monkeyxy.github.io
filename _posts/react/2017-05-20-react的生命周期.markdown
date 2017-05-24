@@ -79,6 +79,9 @@ author: xy
                 }
                 this._bind.apply(this,['func1','func2'])//需要手动绑定函数
             }
+            _bind(...methods) {
+                methods.forEach((method) => this[method] = this[method].bind(this));
+            }
 
             //render之前调用，业务逻辑都应该放在这里，如对state的操作等
             componentWillMount() {

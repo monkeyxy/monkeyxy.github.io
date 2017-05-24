@@ -12,13 +12,88 @@ author: xy
 
 *先来了解下props和state的概念以及区别*
 
-props:是不可变的。
+props:是不可变的。是一种父级向子级传递数据的方式。
 
-state:是可变的。
+state:是可变的。state是react中组件的一个对象。根据不同的状态来重新渲染界面。in all，用户界面是通过state的变化而变化。
 
 #### 一、组件之间的交流方式
 
 1、<父组件>向<子组件>传值
+
+父组件将子组件需要的props传给子组件，子组件通过this.props来使用----通常都是通过子组件的props用父组件的东西。
+
+    class Parent React.Component({
+        ...
+        render(){
+            return(
+                <Children {this.props}/>
+            )
+        }
+    }) 
+
+    class Children React.Component({
+        ...
+        componentWillReceiveProps(nextProps){
+            this.setState({
+                something:nextProps.something,
+                ...
+            })
+        }
+        ...
+    })
+
+2、<子组件>向<父组件>传值
+
+父组件用子组件的东西。可以把传递的内容通过设置ref，写在子组件上。父组件通过ref操作子组件的属性。
+
+	class Parent React.Component({
+        constructor(props){
+            super(props);
+
+            this._bind>apply(this,['changeRefreshState','parentFunc']);
+        }
+        _bind(...methods) {
+            methods.forEach((method) => this[method] = this[method].bind(this));
+        }
+        changeRefreshState(event){
+            this.setState({
+                shouldRefresh:event,//是否需要刷新
+            })
+        }
+        parentFunc(){
+            this.refs.message.callAjax();//子组件去拉取数据
+        }
+        render(){
+            return(
+                <div>
+                     <Children ref="message"  changeRefreshState= { this.changeRefreshState}/>
+                     <button onClick={this.parentFunc}>子组件去拉取数据</button>
+                </div>
+            )
+        }
+    })
+    export default Parent;
+
+    class Children React.Componen({
+        ...
+        callAjax(){
+            $.ajax({
+                url:url,
+                data:param
+            })
+                .done((data)=>{
+                    this.props.changeRefreshState;//刷新
+                })
+                .fail(()=>{
+                     //如果获取失败，这不刷新
+                    this.props.changeRefreshState = false;
+                })
+        }
+    })
+
+3、没有任何关系的组件间的传值
+
+
 
 
 
