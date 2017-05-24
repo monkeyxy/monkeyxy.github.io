@@ -1,0 +1,76 @@
+---
+title: 初识react
+date: '2017-05-24 16:33:00'
+categories: [
+front
+]
+layout: post
+author: xy
+---
+
+### 一、Git简介
+
+> Git是一个开源的分布式版本控制系统。
+
+****
+
+**命令大全**
+
+1、以当前目录作为Git仓库
+
+git init
+
+2、以指定目录作为Git仓库
+
+git init cangku
+
+3、添加新文件
+
+git add filename
+
+4、提交版本
+
+git commit -a -m "changed something"
+
+-a是修改了多个文件，不想每一个都add，可用-a标识。-m后是提交的描述信息
+
+5、克隆一个库
+
+git clone xxxxx
+
+6、提交代码
+
+git push
+
+7、拉取更新
+
+git pull
+
+8、创建分支
+
+git branch develop
+
+git checkout develop(切换到develop分支，master是主分支)
+
+9、删除分支
+
+git branch -d develop
+
+10、查看仓库当前状态
+
+git status
+
+git diff(可看到具体修改了什么内容)
+
+11、查看每次修改的历史记录
+
+git log
+
+12、版本回退
+
+git reset --hard xxxxx(版本号)（可确定回退到哪个版本）
+
+git reflog (可用来记录你的每一次命令历史，确定要回到未来的哪个版本)
+
+待补充。。。
+
