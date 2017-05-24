@@ -21,7 +21,7 @@ state:是可变的。state是react中组件的一个对象。根据不同的状
 
 1、<父组件>向<子组件>传值
 
-父组件将子组件需要的props传给子组件，子组件通过this.props来使用----通常都是通过子组件的props用父组件的东西。
+<p style="text-indent:2em">父组件将子组件需要的props传给子组件，子组件通过this.props来使用----通常都是通过子组件的props用父组件的东西。</p>
 
     class Parent React.Component({
         ...
@@ -45,7 +45,7 @@ state:是可变的。state是react中组件的一个对象。根据不同的状
 
 2、<子组件>向<父组件>传值
 
-父组件用子组件的东西。可以把传递的内容通过设置ref，写在子组件上。父组件通过ref操作子组件的属性。
+<p style="text-indent:2em">父组件用子组件的东西。可以把传递的内容通过设置ref，写在子组件上。父组件通过ref操作子组件的属性。</p>
 
 	class Parent React.Component({
         constructor(props){
@@ -94,17 +94,17 @@ state:是可变的。state是react中组件的一个对象。根据不同的状
 
 3、没有任何关系的组件间的传值
 
-目前react组件内部可能是个完整的应用，但是却无法让两个组件之间互相交流，使用对方的数据。有一种做法是，将两个组件之前使用相同的数据部分放在共有的父组件来管理，再通过props分发回组件。
+<p style="text-indent:2em">目前react组件内部可能是个完整的应用，但是却无法让两个组件之间互相交流，使用对方的数据。有一种做法是，将两个组件之前使用相同的数据部分放在共有的父组件来管理，再通过props分发回组件。</p>
 
 几个问题：
 
-*前面提到，react通过props父级向子级分发属性，state则是组件内部可以自行管理的状态。react没有数据向上回溯的能力。数据是单向流动的。*
+<p style="color:#ac4142;text-indent:2em">前面提到，react通过props父级向子级分发属性，state则是组件内部可以自行管理的状态。react没有数据向上回溯的能力。数据是单向流动的。</p>
 
-*子组件改变父组件的state的方法只能通过onclick事件触发父组件声明好的回调*
+<p style="color:#ac4142;text-indent:2em">子组件改变父组件的state的方法只能通过onclick事件触发父组件声明好的回调</p>
 
-*组件之间的嵌套关系复杂，业务中的逻辑太多，单纯通过props和state来完成大型应用的数据管理是远远不够的*
+<p style="color:#ac4142;text-indent:2em">组件之间的嵌套关系复杂，业务中的逻辑太多，单纯通过props和state来完成大型应用的数据管理是远远不够的</p>
 
-*组件之间的交流，如果把所有的state集中放在所有组件的顶层，再从顶层分发下来。为了更好的管理state，需要一个专业的库来管理，这时就很有必要引入Redux*
+<p style="color:#ac4142;text-indent:2em">组件之间的交流，如果把所有的state集中放在所有组件的顶层，再从顶层分发下来。为了更好的管理state，需要一个专业的库来管理，这时就很有必要引入Redux</p>
 
 
 
