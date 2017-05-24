@@ -64,7 +64,7 @@ state:是可变的。state是react中组件的一个对象。根据不同的状
         parentFunc(){
             this.refs.message.callAjax();//子组件去拉取数据
         }
-        render(){
+        render() {
             return(
                 <div>
                      <Children ref="message"  changeRefreshState= { this.changeRefreshState}/>

@@ -16,7 +16,7 @@ author: xy
 
 * 1 **React不是一个MVC框架**
 
-    不是完整的MVC框架，最多可认为是MVC中的V(view)。主要做四件事情：前端控件组件化。利用props形成单向数据流。根据state的变化更新view。利用虚拟DOM来提升渲染性能。  ui = f(props,state)。
+    不是完整的MVC框架，最多可认为是MVC中的V(view)。React.js只是一个视图库。主要做四件事情：前端控件组件化。利用props形成单向数据流。根据state的变化更新view。利用虚拟DOM来提升渲染性能。  ui = f(props,state)。
 
 * 2 **虚拟DOM**
     

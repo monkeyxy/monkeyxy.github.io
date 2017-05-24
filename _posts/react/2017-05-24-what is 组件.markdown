@@ -1,0 +1,70 @@
+---
+title: Redux的一等公民——组件
+date: '2017-05-24 13:49:00'
+categories: [
+front
+]
+layout: post
+author: xy
+---
+
+### 组件
+
+#### 一、组件的类型
+
+**容器组件**
+
+*包含展示组件，一般不会有自己的DOM标签（div除外）。为展示组件提供数据。有状态的*
+
+**展示组件**
+
+*关心组件的UI，有自己的DOM标签和样式，通常可包含其他小组件。不需要加载和操作数据。通过props明确接受数据，发起回调。绝大部分都应该是无状态的*
+
+    <Container>
+        
+    </Container>
+
+展示和容器更好的分离。
+
+#### 二、有状态组件和无状态组件
+
+无状态组件的创建形式使代码的可读性更好，只有一个render的方法
+
+    const StateLessComponent = ({data,page} =>{
+        const colums = [.........]
+        render() {
+            return(
+                <div>
+                    <Table
+                        colums={columns}
+                        dataSource={data}
+                    />
+                </div>
+            )
+        }
+    })
+无状态的组件只需要一个render函数来实现，就不会有实例化的过程。不需要分配多余的内存，性能进一步提升。并且不能访问this对象，也没用组件的几个生命周期方法。
+
+#### 三、组件的三种写法
+
+**无状态函数式组件**
+
+**React.createClass**
+
+**React.Component**
+
+
+#### 四、添加组件验证器propTypes
+
+   const MyComponent = creatClass({
+       propType : {
+            title:React.PropTypes.string.isRequired,
+       }
+       render: function (){
+           return(
+               <div></div>
+           )
+       }
+   })
+
+
