@@ -26,6 +26,8 @@ author: xy
 
 展示和容器更好的分离。
 
+****
+
 #### 二、有状态组件和无状态组件
 
 无状态组件的创建形式使代码的可读性更好，只有一个render的方法
@@ -45,6 +47,8 @@ author: xy
     })
 无状态的组件只需要一个render函数来实现，就不会有实例化的过程。不需要分配多余的内存，性能进一步提升。并且不能访问this对象，也没用组件的几个生命周期方法。
 
+****
+
 #### 三、组件的三种写法
 
 **无状态函数式组件**
@@ -54,9 +58,12 @@ author: xy
 **React.Component**
 
 
+****
+
+
 #### 四、添加组件验证器propTypes
 
-   const MyComponent = creatClass({
+    const MyComponent = creatClass({
        propType : {
             title:React.PropTypes.string.isRequired,
        }
@@ -65,6 +72,6 @@ author: xy
                <div></div>
            )
        }
-   })
+    })
 
 
