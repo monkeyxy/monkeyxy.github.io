@@ -1,6 +1,7 @@
 ---
 title: React篇4--React的一等公民——组件
 date: '2017-05-24 13:49:00'
+updateAt: '2017-6-01 17:00:00'
 categories: [
 front
 ]
@@ -21,7 +22,8 @@ author: xy
 *关心组件的UI，有自己的DOM标签和样式，通常可包含其他小组件。不需要加载和操作数据。通过props明确接受数据，发起回调。绝大部分都应该是无状态的*
 
     <Container>
-        
+        <Heading></Heading>
+        <Slider></Slider>
     </Container>
 
 展示和容器更好的分离。
@@ -53,10 +55,33 @@ author: xy
 
 **无状态函数式组件**
 
+可参考上例
+
 **React.createClass**
+
+    const MyComponent = creatClass({
+     ...
+       render: function (){
+           return(
+               <div></div>
+           )
+       }
+    })
 
 **React.Component**
 
+    class MyComponent extends React.Component(
+        constructor(){
+            super();//super用于类继承，在构造函数中用this，必须先使用super。
+            this.myClick = this.myClick.bind(this);
+        }
+        myClick(){
+            ...
+        }
+        render(){
+            <div onClick = { this.myClick }>xx</div>
+        }
+    )
 
 ****
 

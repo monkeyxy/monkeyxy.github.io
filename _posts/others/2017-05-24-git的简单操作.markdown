@@ -1,5 +1,5 @@
 ---
-title: Git操作
+title: other篇1--Git操作
 date: '2017-05-24 16:33:00'
 categories: [
 front
@@ -73,4 +73,9 @@ git reset --hard xxxxx(版本号)（可确定回退到哪个版本）
 git reflog (可用来记录你的每一次命令历史，确定要回到未来的哪个版本)
 
 待补充。。。
+
+生成SSHkey
+
+$ ssh-keygen -t rsa -C "xxxx@xxx.com"  (你的邮箱)
+
 
