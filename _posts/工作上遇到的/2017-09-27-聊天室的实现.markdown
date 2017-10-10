@@ -10,8 +10,6 @@ author: xy
 
 1、简单介绍socket.io
 
-Ws   绿色的是发送的  白色的是接收的   2 3 ping-pong一下  看下网络是否正常
-
 Socket.IO是一个开源的WebSocket库，它通过Node.js实现WebSocket服务端，同时也提供客户端JS库。Socket.IO支持以事件为基础的实时双向通讯，它可以工作在任何平台、浏览器或移动设备。
 
 websocket 可以做到实时推送技术
@@ -43,6 +41,8 @@ socket 、web socket、 sockert.io
 	socket起源于Unix，而Unix/LINux的哲学就是：“一切皆文件”，socket是一种特殊的文件，socket的一些函数就是对其进行读写打开关闭的操作。
 ![socket通信图](/images/socket.png)
 
+----
+
 	WebSocket
 	主流的Web端即时通讯方案大致有4种：传统Ajax短轮询、Comet技术、WebSocket技术、SSE（Server-sent Events）。
 	WebSocket是HTML5的一种新通信协议，它实现了浏览器与服务器之间的双向通讯。
@@ -51,10 +51,10 @@ socket 、web socket、 sockert.io
 	Socket.IO
 	Socket.IO是一个完全由JavaScript实现、基于Node.js、支持WebSocket的协议用于实时通信、跨平台的开源框架，它包括了客户端的JavaScript和服务器端的Node.js。
 	Socket.IO支持以事件为基础的实时双向通讯，它可以工作在任何平台、浏览器或移动设备。
+-----
 
-
-2、聊天室的几大功能实现
-	(1)、如何通信
-	(2)、在线客户列表+主播成员列表（加群退群的即时更新）
-	(3)、禁言+ 引用内容 + @某某 +屏蔽展示
-	(4)、打赏等其他的广播通知
+	2、聊天室的几大功能实现
+		(1)、如何通信
+		(2)、在线客户列表+主播成员列表（加群退群的即时更新）
+		(3)、禁言+ 引用内容 + @某某 +屏蔽展示
+		(4)、打赏等其他的广播通知
