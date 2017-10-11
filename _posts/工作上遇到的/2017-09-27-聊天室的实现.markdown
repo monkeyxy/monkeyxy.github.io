@@ -8,27 +8,9 @@ layout: post
 author: xy
 ---
 
-1、简单介绍socket.io
+1、socket 、web socket、 sockert.io
 
-Socket.IO是一个开源的WebSocket库，它通过Node.js实现WebSocket服务端，同时也提供客户端JS库。Socket.IO支持以事件为基础的实时双向通讯，它可以工作在任何平台、浏览器或移动设备。
-
-
-客户端向服务器端发起socket请求，on是为了监听服务器信息，emit是为了请求
-
-	客户端的
-	io.connect(url) //客户端连接上服务器端
-	socket.on  //客户端监听服务器端事件
-	socket.emit  //客户端向服务器端发送数据
-	socket.disconnect() //客户端断开链接
-
-	服务器端的
-	socket.on
-	socket.emit
-	socket.broadcast
-	、、。。。。。
-
-socket 、web socket、 sockert.io
-
+----
 	socket
 
 	socket是对TCP/IP协议的封装，Socket本身并不是协议，而是一个调用接口(API)。
@@ -52,6 +34,21 @@ socket 、web socket、 sockert.io
 
 	Socket.IO
 	Socket.IO是一个完全由JavaScript实现、基于Node.js、支持WebSocket的协议用于实时通信、跨平台的开源框架，它包括了客户端的JavaScript和服务器端的Node.js。
+	Socket.IO是一个开源的WebSocket库，它通过Node.js实现WebSocket服务端，同时也提供客户端JS库。Socket.IO支持以事件为基础的实时双向通讯，它可以工作在任何平台、浏览器或移动设备。
+
+	客户端向服务器端发起socket请求，on是为了监听服务器信息，emit是为了请求
+
+	客户端的
+	io.connect(url) //客户端连接上服务器端
+	socket.on  //客户端监听服务器端事件
+	socket.emit  //客户端向服务器端发送数据
+	socket.disconnect() //客户端断开链接
+
+	服务器端的
+	socket.on
+	socket.emit
+	socket.broadcast
+	......
 
 
 -----
