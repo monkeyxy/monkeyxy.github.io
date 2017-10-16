@@ -1,5 +1,5 @@
 ---
-title: 聊天室的实现
+title: 聊天室的相关技术及实现
 date: '2017-09-27 14:17:00'
 categories: [
     work
@@ -7,6 +7,16 @@ categories: [
 layout: post
 author: xy
 ---
+
+### 序言
+
+这一篇介绍如何实现聊天室。
+首先看下正常的一次http请求是酱紫的。
+
+![HTTP请求](/images/http1.png)
+
+两个web客户端进行通信，如果按照普通的技术，就是用ajax请求到服务端询问另外一方的消息，不断进行处理，贼蛋疼的。。。撸主以前一直以为，如果connection为keep-alive设置为长连接，这样是否就能愉快的进行聊天？事实上并非如此~~
+先来了解神马是http的长连接和短连接~
 
 1、http的长连接和短连接
 
@@ -18,6 +28,9 @@ author: xy
 
 ----
 	设置connection为keep-alive，且要服务器和客户端都设置，算长连接。http1.1的长连接是指多次http请求（这些请求包括网页内容，css文件，js文件，图片等等），其实都是使用一个tcp连接，可以节省很多消耗。这里的长连接并不是永久连接，如果这个连接没有http请求发出的话，这个长连接就会断掉。（具体连接的长短，是可以在header中设置）
+
+
+因此，connection为keep-alive并不能愉快的在聊天室聊天。那么用socket的话会怎样呢？
 
 2、socket 、web socket、 sockert.io
 
@@ -63,11 +76,14 @@ author: xy
 
 
 -----
+
+所以咯？
+
 	用websocket实现聊天室和用http实现聊天室的区别
 	1、websocket是http协议的补充。http需要客户端主动发起请求，服务器才能响应一次。websocket可以实现全双工即时通信，服务器可以主动给客户端推送消息。
 	2、http是无状态的，对一个url请求是没有上下文关系。每个请求都是独立的，客户端需要通过增加cookie和session机制来设置状态。
 
-3、聊天室的几大功能实现
+### 聊天室的几大功能实现
 
 项目中引入socket.io   
 `<script src="https://cdn.bootcss.com/socket.io/1.7.4/socket.io.js"></script>`
@@ -77,8 +93,6 @@ io.connet('http://xxx')
 socket.on //用户监听服务器端的事件
 
 socket.emit //用于向服务器发送数据
-
-
 
 	(1)、如何通信
 
