@@ -11,6 +11,7 @@ author: xy
 1、http的长连接和短连接
 
 	http1.0规定浏览器与服务器只保持短连接，浏览器每次请求都需要和服务器建立一个TCP连接，服务器完成请求处理后立即断开TCP连接。每次连接只传输一个文档和图像，上下请求完全分离，客户端每次建立和关闭连接是一个费时的过程且影响客户机和服务器的性能。
+
 	http1.1支持长连接，在一个tcp连接上可以传送多个http请求和响应，减少建立和关闭连接的消耗和延迟。http1.1允许客户端不用等待上一次请求结果返回，就可以发出下一次请求，但服务器端必须按照客户端请求先后顺序依次返回响应结果。http1.1的持续连接需要在connection请求头的值为keep-alive，客户端通知服务器返回本次请求结果后保持连接。connection为close，客户端通知服务器返回本次请求结果后关闭连接。http1.1还提供了与身份认证、状态管理和cache缓存等机制相关的请求头和响应头。
 
 ![HTTP1.1长连接图](/images/http1.1.jpg)
@@ -42,7 +43,6 @@ author: xy
 
 -----
 
-
 	Socket.IO
 	Socket.IO是一个完全由JavaScript实现、基于Node.js、支持WebSocket的协议用于实时通信、跨平台的开源框架，它包括了客户端的JavaScript和服务器端的Node.js。
 	Socket.IO是一个开源的WebSocket库，它通过Node.js实现WebSocket服务端，同时也提供客户端JS库。Socket.IO支持以事件为基础的实时双向通讯，它可以工作在任何平台、浏览器或移动设备。
@@ -71,6 +71,7 @@ author: xy
 
 项目中引入socket.io   
 `<script src="https://cdn.bootcss.com/socket.io/1.7.4/socket.io.js"></script>`
+
 io.connet('http://xxx')
 
 socket.on //用户监听服务器端的事件
@@ -82,6 +83,10 @@ socket.emit //用于向服务器发送数据
 	(1)、如何通信
 
 ![贴代码1](/images/code1.jpg)
+
+![ws图1](/images/sendMsg1.png)
+
+打开控制台，查看ws，绿色的为发送的数据，白色的为服务器返回的数据，2和3是ping-pong一下，看网络是否畅通。
 
 	(2)、在线客户列表+主播成员列表（加群退群的即时更新）
 	(3)、禁言+ 引用内容 + @某某 +屏蔽展示
