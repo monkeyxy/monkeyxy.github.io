@@ -1,5 +1,5 @@
 ---
-title: Sketch的入门~
+title: 前端仔玩 Sketch 的心路历程
 date: '2018-01-11 10:00:00'
 categories: [
  tool
@@ -9,29 +9,27 @@ author: xy
 ---
 
 
-<h1 style="text-align:center">前端仔玩 Sketch 的心路历程</h1>
-
-设计师中最火的工具绝对是Adobe爸爸底下的Photoshop，业界良心软件，设计必备。而这章主要是介绍新晋设计神器~Sketch！
+<p style="text-indent:2em">设计师中最火的工具绝对是Adobe爸爸底下的Photoshop，业界良心软件，设计必备。而这章主要是介绍新晋设计神器~Sketch！</p>
 
 Da~la~
 
-<div style="text-align:center">
-    <img src="../../images/sketch/sketch-logo.jpg" style="width:30%" />
+<div>
+    <img src="../../images/sketch/sketch-logo.jpg" style="width:30%;margin: auto;" />
 </div>
 
-辣么，what is Sketch?
+<p style="text-indent:2em">辣么，what is Sketch?</p>
 
-Sketch 是一款矢量绘图应用。作为新晋设计神器，傲娇的Sketch暂时只支持Mac，矢量绘图也是目前进行网页，图标以及界面设计最好的方式。
+<p style="text-indent:2em">Sketch 是一款矢量绘图应用。作为新晋设计神器，傲娇的Sketch暂时只支持Mac，矢量绘图也是目前进行网页，图标以及界面设计最好的方式。</p>
 
-有人会问，那Photoshop和Sketch有什么不同的地方么？Photoshop大而全，还有必要去学其他软件么？
+<p style="text-indent:2em">有人会问，那Photoshop和Sketch有什么不同的地方么？Photoshop大而全，还有必要去学其他软件么？</p>
 
-<div style="text-align:center">
-    <img src="../../images/sketch/1.jpg" style="width:30%" />
+<div>
+    <img src="../../images/sketch/1.jpg" style="width:30%;margin: auto;" />
 </div>
 
 * * *
 
-<h3 style="text-align:center;color:red">Sketch VS Photoshop</h3>
+<h2 style="text-align:center;color:red">Sketch VS Photoshop</h2>
  
 Photoshop
 <ul>
@@ -55,7 +53,7 @@ photoshop:专注位图处理
 
 Sketch:专注网页设计和ui设计
 
-一句不算废话的废话总结：Photoshop并不是一款合适的界面设计工具，Sketch可以带你飞~
+<p style="text-indent:2em;color:red">一句不算废话的废话总结：Photoshop并不是一款合适的界面设计工具，Sketch可以带你飞~</p>
 
 ![img2](/images/sketch/2.jpg)
 
@@ -64,49 +62,39 @@ Sketch:专注网页设计和ui设计
 ***
 
 
-<h3 style="text-align:center">给前端仔的</h3>
+<h2 style="text-align:center;color:red">给前端仔的</h2>
 
-辣么~搞设计的是美丽又可爱大方温柔的ui大大的天职，而对于我们前端仔，我们只会关心，图要怎么快速切好，啥色号啊，这个图标有多大尺寸啊。。。赶紧撸起来我们的界面吧~
+<p style="text-indent:2em">辣么~搞设计的是美丽又可爱大方温柔的ui大大的天职，而对于我们前端仔，我们只会关心，图要怎么快速切好，啥色号啊，这个图标有多大尺寸啊。。。赶紧撸起来我们的界面吧~</p>
 
 <div style="text-align:center">
     <img src="../../images/sketch/4.jpg" style="width:30%" />
 </div>
 
-<!-- 对前端有用的技巧使用 -->
+<b>对前端有用的小技巧</b>
+
 1、标尺使用
 
 2、快速切图
 
-
 3、快捷键
 
-以下列入若干个前端仔常使用的快捷键，让你的工作效率xiu~xiu~xiu~
+<p style="text-indent:2em">以下列入若干个前端仔常使用的快捷键，让你的工作效率xiu~xiu~xiu~</p>
 
-快速取色    Control+ C
+<div style="text-align:center">
+    <img src="../../images/sketch/14.jpg"  />
+</div>
 
-隐藏对象    Command +Shift +H
-
-转为智能对象  Command+E
-
-选中对象    Command 
-
-多选对象    Shift
-
-100%比例展示   Command+0
-
-整图展示    Command+1
-
-复制图层     Command+D
-
-合并图层组     Command+G
-
-get more，click this  https://www.jianshu.com/p/46284dbe51e6 or 自行百度啊
+get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://www.jianshu.com/p/46284dbe51e6</a> or 自行百度啊
 
 ***
 
 <h3 style="text-align:center">Sketch插件家族—— Sketch Toolbox</h3>
 
-在Sketch Toolbox可以下载Sketch的大部分插件（附件有带压缩包，但改工具仍存在bug不太稳定，容易用着用着就崩溃掉~慎重~~）
+<a href="http://sketchtoolbox.com/">http://sketchtoolbox.com/</a>
+<div style="text-align:center">
+    <img src="../../images/sketch/15.jpg" />
+</div>
+<p style="text-indent:2em">在Sketch Toolbox可以下载Sketch的大部分插件（附件有带压缩包，但该工具仍存在bug不太稳定，容易用着用着就崩溃掉~慎重~~）</p>
 
 
 ***
@@ -122,33 +110,38 @@ get more，click this  https://www.jianshu.com/p/46284dbe51e6 or 自行百度啊
     <p>(Zeplin工具的工作界面，也可以在网页打开在线编辑)</p>
 </div>
 
-两者的核心功能都是自动输出标注与切图。只不过两者在一些细节处略有不同
+<p style="text-indent:2em">两者的核心功能都是自动输出标注与切图。只不过两者在一些细节处略有不同</p>
 
 <ol>
     <li>收费 
-        <p>Zeplin：产出物是在线的，用户可以通过访问网页查看Zeplin的标注与切图。你必须先邀请用户进入Zeplin项目组，该用户才可以通过网页访问到。 https://app.zeplin.io/projects
+        <p style="text-indent:2em">Zeplin：产出物是在线的，用户可以通过访问网页查看Zeplin的标注与切图。你必须先邀请用户进入Zeplin项目组，该用户才可以通过网页访问到。 https://app.zeplin.io/projects
         <div style="text-align:center">
             <img src="../../images/sketch/7.jpg" />
             <p>(zeplin的在线工作界面)</p>
         </div>
         </p>
-        <p>Measure：产出物在本地。用户得将文件包传来传去的，更新起来肯定会比较麻烦。允许任何人查看。
+        <p style="text-indent:2em">Measure：产出物在本地。用户得将文件包传来传去的，更新起来肯定会比较麻烦。允许任何人查看。
         </p>
     </li>
     <li>备注
-        <p>Zeplin：可以直接在标注上添加备注，比较方便。
+        <p style="text-indent:2em">Zeplin：可以直接在标注上添加备注，比较方便。
         </p>
         <div style="text-align:center">
             <img src="../../images/sketch/8.jpg" />
         </div>
-        <p>Measure：要想添加备注，得先在Skech内添加文字>再转成备注格式。
+        <p style="text-indent:2em">Measure：要想添加备注，得先在Skech内添加文字>再转成备注格式。
         </p>
          <div>
+            <p>step0:选中插入文本工具</p>
             <img src="../../images/sketch/9.jpg" />
+            <p>step1:输入文本内容</p>
             <img src="../../images/sketch/10.jpg"
             style="width:30%" />
+            <p>step2:将文本转换为备注，也可用快捷键 Control+Shift+5</p>
             <img src="../../images/sketch/11.jpg" />
+            <p>step3:转换成功后，通过measure输出，就长这样啦~</p>
             <img src="../../images/sketch/12.jpg" style="width:30%" />
+            <img src="../../images/sketch/13.jpg" />
         </div>
     </li>
 </ol>
