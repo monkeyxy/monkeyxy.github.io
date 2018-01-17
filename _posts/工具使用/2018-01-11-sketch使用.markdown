@@ -1,0 +1,154 @@
+---
+title: Sketch的入门~
+date: '2018-01-11 10:00:00'
+categories: [
+ tool
+]
+layout: post
+author: xy
+---
+
+
+<h1 style="text-align:center">前端仔玩 Sketch 的心路历程</h1>
+
+设计师中最火的工具绝对是Adobe爸爸底下的Photoshop，业界良心软件，设计必备。而这章主要是介绍新晋设计神器~Sketch！
+
+Da~la~
+
+<div style="text-align:center">
+    <img src="../../images/sketch/sketch-logo.jpg" style="width:30%" />
+</div>
+
+辣么，what is Sketch?
+
+Sketch 是一款矢量绘图应用。作为新晋设计神器，傲娇的Sketch暂时只支持Mac，矢量绘图也是目前进行网页，图标以及界面设计最好的方式。
+
+有人会问，那Photoshop和Sketch有什么不同的地方么？Photoshop大而全，还有必要去学其他软件么？
+
+<div style="text-align:center">
+    <img src="../../images/sketch/1.jpg" style="width:30%" />
+</div>
+
+* * *
+
+<h3 style="text-align:center;color:red">Sketch VS Photoshop</h3>
+ 
+Photoshop
+<ul>
+    <li>为图像处理开发的。（图片修正，画笔绘图）</li>
+    <li>不适合移动开发  不同的设备输出不同分辨率的素材</li>
+    <li>引擎过于老旧  耗资源 (每次保存文件，遇到差点的电脑随时随地会崩溃原地爆炸！)  但是能兼顾mac和windows平台</li>
+    <li>待续。。。。</li>
+</ul>
+
+
+Sketch
+<ul>
+    <li>多版本控制</li>
+    <li>只支持Mac</li>
+    <li>still have many bugs</li>
+    <li>运行起来非常快 (自动保存，有插件可以查询到历史版本，“版本管理工具”)</li>
+    <li>待续。。。。</li>
+</ul>
+
+photoshop:专注位图处理
+
+Sketch:专注网页设计和ui设计
+
+一句不算废话的废话总结：Photoshop并不是一款合适的界面设计工具，Sketch可以带你飞~
+
+![img2](/images/sketch/2.jpg)
+
+![img3](/images/sketch/3.png)
+
+***
+
+
+<h3 style="text-align:center">给前端仔的</h3>
+
+辣么~搞设计的是美丽又可爱大方温柔的ui大大的天职，而对于我们前端仔，我们只会关心，图要怎么快速切好，啥色号啊，这个图标有多大尺寸啊。。。赶紧撸起来我们的界面吧~
+
+<div style="text-align:center">
+    <img src="../../images/sketch/4.jpg" style="width:30%" />
+</div>
+
+<!-- 对前端有用的技巧使用 -->
+1、标尺使用
+
+2、快速切图
+
+
+3、快捷键
+
+以下列入若干个前端仔常使用的快捷键，让你的工作效率xiu~xiu~xiu~
+
+快速取色    Control+ C
+
+隐藏对象    Command +Shift +H
+
+转为智能对象  Command+E
+
+选中对象    Command 
+
+多选对象    Shift
+
+100%比例展示   Command+0
+
+整图展示    Command+1
+
+复制图层     Command+D
+
+合并图层组     Command+G
+
+get more，click this  https://www.jianshu.com/p/46284dbe51e6 or 自行百度啊
+
+***
+
+<h3 style="text-align:center">Sketch插件家族—— Sketch Toolbox</h3>
+
+在Sketch Toolbox可以下载Sketch的大部分插件（附件有带压缩包，但改工具仍存在bug不太稳定，容易用着用着就崩溃掉~慎重~~）
+
+
+***
+
+<h3 style="text-align:center">标尺类插件——measure 和 zeplin的用法</h3>
+
+<div style="text-align:center">
+    <img src="../../images/sketch/5.jpg" />
+    <p>(Measure工具的工作界面)</p>
+</div>
+<div style="text-align:center">
+    <img src="../../images/sketch/6.jpg" />
+    <p>(Zeplin工具的工作界面，也可以在网页打开在线编辑)</p>
+</div>
+
+两者的核心功能都是自动输出标注与切图。只不过两者在一些细节处略有不同
+
+<ol>
+    <li>收费 
+        <p>Zeplin：产出物是在线的，用户可以通过访问网页查看Zeplin的标注与切图。你必须先邀请用户进入Zeplin项目组，该用户才可以通过网页访问到。 https://app.zeplin.io/projects
+        <div style="text-align:center">
+            <img src="../../images/sketch/7.jpg" />
+            <p>(zeplin的在线工作界面)</p>
+        </div>
+        </p>
+        <p>Measure：产出物在本地。用户得将文件包传来传去的，更新起来肯定会比较麻烦。允许任何人查看。
+        </p>
+    </li>
+    <li>备注
+        <p>Zeplin：可以直接在标注上添加备注，比较方便。
+        </p>
+        <div style="text-align:center">
+            <img src="../../images/sketch/8.jpg" />
+        </div>
+        <p>Measure：要想添加备注，得先在Skech内添加文字>再转成备注格式。
+        </p>
+         <div>
+            <img src="../../images/sketch/9.jpg" />
+            <img src="../../images/sketch/10.jpg"
+            style="width:30%" />
+            <img src="../../images/sketch/11.jpg" />
+            <img src="../../images/sketch/12.jpg" style="width:30%" />
+        </div>
+    </li>
+</ol>
