@@ -36,7 +36,7 @@ Photoshop
     <li>为图像处理开发的。（图片修正，画笔绘图）</li>
     <li>不适合移动开发  不同的设备输出不同分辨率的素材</li>
     <li>引擎过于老旧  耗资源 (每次保存文件，遇到差点的电脑随时随地会崩溃原地爆炸！)  但是能兼顾mac和windows平台</li>
-    <li>待续。。。。</li>
+    <li>...</li>
 </ul>
 
 
@@ -46,7 +46,7 @@ Sketch
     <li>只支持Mac</li>
     <li>still have many bugs</li>
     <li>运行起来非常快 (自动保存，有插件可以查询到历史版本，“版本管理工具”)</li>
-    <li>待续。。。。</li>
+    <li>...</li>
 </ul>
 
 photoshop:专注位图处理
@@ -60,13 +60,19 @@ Sketch:专注网页设计和ui设计
 
 ***
 
-<h2 style="text-align:center;color:red">Sketch最火爆的插件————Measure</h2>
+<h2 style="text-align:center;color:red">Sketch最火爆的标注插件————Measure</h2>
 
-<p style="text-indent:2em">对于前端仔，疲于页面业务逻辑的实现，当时是希望能在网页ui实现上，越快速实现越好。icon的尺寸大小、用色、字体大小、间距等等这些细节上的确认，为了减小前端仔和ui大大的沟通成本，如果能在图上一次性加入一些标注信息和切图等，这将大大提高前端er的工作效率 </p>
-<p style="text-indent:2em">历来都是传输psd文件，前端要自己去量多每个图层的大小，为此，隆重推荐用Sketch插件————Measure.！！！从此妈妈再也不用担心我罗里吧嗦的繁琐切图问题了~</p>
+<p style="text-indent:2em">对于前端仔，疲于页面业务逻辑的实现，当然是希望能在网页ui实现上，越快速越好。因此，icon的尺寸大小、用色、字体大小、间距等等这些细节上的确认，如果能在图上一次性加入一些标注信息和切图等，减小前端仔和ui大大的沟通成本，这将大大提高前端er的工作效率 </p>
+<p style="text-indent:2em">为此，隆重推荐用Sketch插件————Measure！！！从此妈妈再也不用担心我罗里吧嗦的繁琐切图问题了~</p>
 
-<div>补充Measure的下载方法。。。。。。（待续）</div>
+<div>附上Measure的下载链接：<a href="http://utom.design/measure/">http://utom.design/measure/</a></div>
 
+使用Measure的好处：
+
+<ul>
+    <li>可以在页面上自动标记出相关参数（间隔，尺寸，属性，备注）</li>
+    <li>规范导出图，一建生成html，包括css样式</li>
+</ul>
 
 <div >
     <img src="../../images/sketch/20.jpg" style="width:30%;margin: auto;"/>
@@ -115,7 +121,7 @@ Sketch:专注网页设计和ui设计
 </ol>
 
 
-get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://www.jianshu.com/p/46284dbe51e6</a> or 自行百度啊
+get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://www.jianshu.com/p/46284dbe51e6</a> or 自行百度谷歌啊
 
 
 ***
@@ -156,15 +162,16 @@ get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://w
         </p>
          <div>
             <p>step0:选中插入文本工具</p>
-            <img src="../../images/sketch/9.jpg" />
+            <img src="../../images/sketch/9.jpg" style="width:50%" />
             <p>step1:输入文本内容</p>
             <img src="../../images/sketch/10.jpg"
-            style="width:30%" />
+            style="width:20%" />
             <p>step2:将文本转换为备注，也可用快捷键 Control+Shift+5</p>
-            <img src="../../images/sketch/11.jpg" />
+            <img src="../../images/sketch/11.jpg" style="width:50%"/>
             <p>step3:转换成功后，通过measure输出，就长这样啦~</p>
-            <img src="../../images/sketch/12.jpg" style="width:30%" />
-            <img src="../../images/sketch/13.jpg" />
+            <img src="../../images/sketch/12.jpg" style="width:20%" />
+            <p>在index.html打开后</p>
+            <img src="../../images/sketch/13.jpg" style="width:50%"/>
         </div>
     </li>
 </ol>
