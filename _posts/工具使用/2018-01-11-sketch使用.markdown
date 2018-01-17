@@ -53,11 +53,29 @@ photoshop:专注位图处理
 
 Sketch:专注网页设计和ui设计
 
-<p style="text-indent:2em;color:red">一句不算废话的废话总结：Photoshop并不是一款合适的界面设计工具，Sketch可以带你飞~</p>
 
 ![img2](/images/sketch/2.jpg)
 
-![img3](/images/sketch/3.png)
+<p style="text-indent:2em;color:red">一句不算废话的废话总结：Photoshop并不是一款合适的界面设计工具，Sketch可以带你飞~</p>
+
+***
+
+<h2 style="text-align:center;color:red">Sketch最火爆的插件————Measure</h2>
+
+<p style="text-indent:2em">对于前端仔，疲于页面业务逻辑的实现，当时是希望能在网页ui实现上，越快速实现越好。icon的尺寸大小、用色、字体大小、间距等等这些细节上的确认，为了减小前端仔和ui大大的沟通成本，如果能在图上一次性加入一些标注信息和切图等，这将大大提高前端er的工作效率 </p>
+<p style="text-indent:2em">历来都是传输psd文件，前端要自己去量多每个图层的大小，为此，隆重推荐用Sketch插件————Measure.！！！从此妈妈再也不用担心我罗里吧嗦的繁琐切图问题了~</p>
+
+<div>补充Measure的下载方法。。。。。。（待续）</div>
+
+
+<div >
+    <img src="../../images/sketch/20.jpg" style="width:30%;margin: auto;"/>
+</div>
+另外如果还对其他sketch的插件感兴趣，再献上sketch工具箱官网~自行下载研究哈：<br/><a href="http://sketchtoolbox.com/">http://sketchtoolbox.com/</a>
+<div style="text-align:center">
+    <img src="../../images/sketch/15.jpg" />
+</div>
+<p style="text-indent:2em">在Sketch Toolbox可以下载Sketch的大部分插件（附件有带压缩包，但该工具仍存在bug不太稳定，容易用着用着就崩溃掉~慎重~~）</p>
 
 ***
 
@@ -72,32 +90,37 @@ Sketch:专注网页设计和ui设计
 
 <b>对前端有用的小技巧</b>
 
-1、标尺使用
+<ol>
+    <li>标尺使用（快速切图+快速导出图+查看图片标注）
+        <p>step0:选中所有图层，找到measure插件，选择工具栏</p>
+        <div>
+            <img src="../../images/sketch/16.jpg" style="width:70%"/>
+        </div>
+        <p>step1:点击导出按钮</p>
+        <div>
+            <img src="../../images/sketch/17.jpg" style="width:70%"/>
+        </div>
+        <p  style="text-indent:2em">step2:查看导出文件，assets文件里面是所有一建切图的文件，点击打开index.html，可看到measure标尺好的界面，鼠标悬浮后即可看到每个小图的尺寸和间距</p>
+        <div>
+            <img src="../../images/sketch/18.jpg" style="width:70%"/>
+            <img src="../../images/sketch/19.jpg" style="width:70%"/>
+        </div>
+    </li>
+    <li>快捷键
+        <p style="text-indent:2em">以下列入若干个前端仔常使用的快捷键，让你的工作效率xiu~xiu~xiu~</p>
+        <div style="text-align:center">
+            <img src="../../images/sketch/14.jpg"  />
+        </div>
+    </li>
+</ol>
 
-2、快速切图
-
-3、快捷键
-
-<p style="text-indent:2em">以下列入若干个前端仔常使用的快捷键，让你的工作效率xiu~xiu~xiu~</p>
-
-<div style="text-align:center">
-    <img src="../../images/sketch/14.jpg"  />
-</div>
 
 get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://www.jianshu.com/p/46284dbe51e6</a> or 自行百度啊
 
-***
-
-<h2 style="text-align:center;color:red">Sketch插件家族—— Sketch Toolbox</h2>
-
-<a href="http://sketchtoolbox.com/">http://sketchtoolbox.com/</a>
-<div style="text-align:center">
-    <img src="../../images/sketch/15.jpg" />
-</div>
-<p style="text-indent:2em">在Sketch Toolbox可以下载Sketch的大部分插件（附件有带压缩包，但该工具仍存在bug不太稳定，容易用着用着就崩溃掉~慎重~~）</p>
-
 
 ***
+
+<p style="text-indent:2em;color:red;font-weight:bold">最后再安利另外一款好用的sketch插件————zeplin！！！</p>
 
 <h2 style="text-align:center;color:red">标尺类插件——measure 和 zeplin的用法</h2>
 
