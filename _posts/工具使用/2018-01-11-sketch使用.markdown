@@ -14,7 +14,7 @@ author: xy
 Da~la~
 
 <div>
-    <img src="../../images/sketch/sketch-logo.jpg" style="width:30%;margin: auto;" />
+    <img src="/images/sketch/sketch-logo.jpg" style="width:30%;margin: auto;" />
 </div>
 
 <p style="text-indent:2em">辣么，what is Sketch?</p>
@@ -24,7 +24,7 @@ Da~la~
 <p style="text-indent:2em">有人会问，那Photoshop和Sketch有什么不同的地方么？Photoshop大而全，还有必要去学其他软件么？</p>
 
 <div>
-    <img src="../../images/sketch/1.jpg" style="width:30%;margin: auto;" />
+    <img src="/images/sketch/1.jpg" style="width:30%;margin: auto;" />
 </div>
 
 * * *
@@ -75,11 +75,11 @@ Sketch:专注网页设计和ui设计
 </ul>
 
 <div >
-    <img src="../../images/sketch/20.jpg" style="width:30%;margin: auto;"/>
+    <img src="/images/sketch/20.jpg" style="width:30%;margin: auto;"/>
 </div>
 另外如果还对其他sketch的插件感兴趣，再献上sketch工具箱官网~自行下载研究哈：<br/><a href="http://sketchtoolbox.com/">http://sketchtoolbox.com/</a>
 <div style="text-align:center">
-    <img src="../../images/sketch/15.jpg" />
+    <img src="/images/sketch/15.jpg" />
 </div>
 <p style="text-indent:2em">在Sketch Toolbox可以下载Sketch的大部分插件（附件有带压缩包，但该工具仍存在bug不太稳定，容易用着用着就崩溃掉~慎重~~）</p>
 
@@ -91,7 +91,7 @@ Sketch:专注网页设计和ui设计
 <p style="text-indent:2em">辣么~搞设计的是美丽又可爱大方温柔的ui大大的天职，而对于我们前端仔，我们只会关心，图要怎么快速切好，啥色号啊，这个图标有多大尺寸啊。。。赶紧撸起来我们的界面吧~</p>
 
 <div style="text-align:center">
-    <img src="../../images/sketch/4.jpg" style="width:30%" />
+    <img src="/images/sketch/4.jpg" style="width:30%" />
 </div>
 
 <b>对前端有用的小技巧</b>
@@ -100,22 +100,22 @@ Sketch:专注网页设计和ui设计
     <li>标尺使用（快速切图+快速导出图+查看图片标注）
         <p>step0:选中所有图层，找到measure插件，选择工具栏</p>
         <div>
-            <img src="../../images/sketch/16.jpg" style="width:70%"/>
+            <img src="/images/sketch/16.jpg" style="width:70%"/>
         </div>
         <p>step1:点击导出按钮</p>
         <div>
-            <img src="../../images/sketch/17.jpg" style="width:70%"/>
+            <img src="/images/sketch/17.jpg" style="width:70%"/>
         </div>
         <p  style="text-indent:2em">step2:查看导出文件，assets文件里面是所有一建切图的文件，点击打开index.html，可看到measure标尺好的界面，鼠标悬浮后即可看到每个小图的尺寸和间距</p>
         <div>
-            <img src="../../images/sketch/18.jpg" style="width:70%"/>
-            <img src="../../images/sketch/19.jpg" style="width:70%"/>
+            <img src="/images/sketch/18.jpg" style="width:70%"/>
+            <img src="/images/sketch/19.jpg" style="width:70%"/>
         </div>
     </li>
     <li>快捷键
         <p style="text-indent:2em">以下列入若干个前端仔常使用的快捷键，让你的工作效率xiu~xiu~xiu~</p>
         <div style="text-align:center">
-            <img src="../../images/sketch/14.jpg"  />
+            <img src="/images/sketch/14.jpg"  />
         </div>
     </li>
 </ol>
@@ -131,11 +131,11 @@ get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://w
 <h2 style="text-align:center;color:red">标尺类插件——measure 和 zeplin的用法</h2>
 
 <div style="text-align:center">
-    <img src="../../images/sketch/5.jpg" />
+    <img src="/images/sketch/5.jpg" />
     <p>(Measure工具的工作界面)</p>
 </div>
 <div style="text-align:center">
-    <img src="../../images/sketch/6.jpg" />
+    <img src="/images/sketch/6.jpg" />
     <p>(Zeplin工具的工作界面，也可以在网页打开在线编辑)</p>
 </div>
 
@@ -145,7 +145,7 @@ get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://w
     <li>收费 
         <p style="text-indent:2em">Zeplin：产出物是在线的，用户可以通过访问网页查看Zeplin的标注与切图。你必须先邀请用户进入Zeplin项目组，该用户才可以通过网页访问到。 https://app.zeplin.io/projects
         <div style="text-align:center">
-            <img src="../../images/sketch/7.jpg" />
+            <img src="/images/sketch/7.jpg" />
             <p>(zeplin的在线工作界面)</p>
         </div>
         </p>
@@ -156,22 +156,22 @@ get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://w
         <p style="text-indent:2em">Zeplin：可以直接在标注上添加备注，比较方便。
         </p>
         <div style="text-align:center">
-            <img src="../../images/sketch/8.jpg" />
+            <img src="/images/sketch/8.jpg" />
         </div>
         <p style="text-indent:2em">Measure：要想添加备注，得先在Skech内添加文字>再转成备注格式。
         </p>
          <div>
             <p>step0:选中插入文本工具</p>
-            <img src="../../images/sketch/9.jpg" style="width:50%" />
+            <img src="/images/sketch/9.jpg" style="width:50%" />
             <p>step1:输入文本内容</p>
-            <img src="../../images/sketch/10.jpg"
+            <img src="/images/sketch/10.jpg"
             style="width:20%" />
             <p>step2:将文本转换为备注，也可用快捷键 Control+Shift+5</p>
-            <img src="../../images/sketch/11.jpg" style="width:50%"/>
+            <img src="/images/sketch/11.jpg" style="width:50%"/>
             <p>step3:转换成功后，通过measure输出，就长这样啦~</p>
-            <img src="../../images/sketch/12.jpg" style="width:20%" />
+            <img src="/images/sketch/12.jpg" style="width:20%" />
             <p>在index.html打开后</p>
-            <img src="../../images/sketch/13.jpg" style="width:50%"/>
+            <img src="/images/sketch/13.jpg" style="width:50%"/>
         </div>
     </li>
 </ol>
