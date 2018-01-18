@@ -82,6 +82,14 @@ Sketch:专注网页设计和ui设计
     <img src="/images/sketch/15.jpg" />
 </div>
 <p style="text-indent:2em">在Sketch Toolbox可以下载Sketch的大部分插件（附件有带压缩包，但该工具仍存在bug不太稳定，容易用着用着就崩溃掉~慎重~~）</p>
+<p>另外，Sketch3.4版本后，已支持自带插件管理工具，Sketch Toolbox基本可以退休了<img src="/images/sketch/21.png" style="width:10%"/>
+
+* 自带插件管理工具(点击插件 => 管理插件 => 在弹窗工具箱中可管理已有的sketch插件 or 下载新的插件)
+
+<img src="/images/sketch/22.jpg" style="width:50%"/>
+<img src="/images/sketch/23.jpg" style="width:50%"/>
+
+</p>
 
 ***
 
@@ -116,6 +124,12 @@ Sketch:专注网页设计和ui设计
         <p style="text-indent:2em">以下列入若干个前端仔常使用的快捷键，让你的工作效率xiu~xiu~xiu~</p>
         <div style="text-align:center">
             <img src="/images/sketch/14.jpg"  />
+        </div>
+    </li>
+    <li>ui图在移动端可预览（Mirror）
+        <p style="text-indent:2em">Mirror:按照图例方式点开，必须在同个局域网内，移动ios设备安装好Sketch Mirror软件，即可在手机上预览ui图</p>
+        <div style="text-align:center">
+            <img src="/images/sketch/24.jpg"  style="width:70%"/>
         </div>
     </li>
 </ol>
