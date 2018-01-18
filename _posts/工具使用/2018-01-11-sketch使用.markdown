@@ -17,7 +17,7 @@ Da~la~
     <img src="/images/sketch/sketch-logo.jpg" style="width:30%;margin: auto;" />
 </div>
 
-<p style="text-indent:2em">辣么，what is Sketch?</p>
+<p style="text-indent:2em">辣么，<span style="color:red;font-size:16px">what is Sketch?</span></p>
 
 <p style="text-indent:2em">Sketch 是一款矢量绘图应用。作为新晋设计神器，傲娇的Sketch暂时只支持Mac，矢量绘图也是目前进行网页，图标以及界面设计最好的方式。</p>
 
@@ -35,7 +35,8 @@ Photoshop
 <ul>
     <li>为图像处理开发的。（图片修正，画笔绘图）</li>
     <li>不适合移动开发  不同的设备输出不同分辨率的素材</li>
-    <li>引擎过于老旧  耗资源 (每次保存文件，遇到差点的电脑随时随地会崩溃原地爆炸！)  但是能兼顾mac和windows平台</li>
+    <li>重量级软件，耗资源 (每次保存文件，遇到差点的电脑随时随地会崩溃原地爆炸！)  但是能兼顾mac和windows平台
+    </li>
     <li>...</li>
 </ul>
 
@@ -44,8 +45,8 @@ Sketch
 <ul>
     <li>多版本控制</li>
     <li>只支持Mac</li>
-    <li>still have many bugs</li>
-    <li>运行起来非常快 (自动保存，有插件可以查询到历史版本，“版本管理工具”)</li>
+    <li>专注网页设计和ui设计</li>
+    <li>轻量级软件，运行起来非常快 </li>
     <li>...</li>
 </ul>
 
@@ -56,14 +57,16 @@ Sketch:专注网页设计和ui设计
 
 ![img2](/images/sketch/2.jpg)
 
-<p style="text-indent:2em;color:red">一句不算废话的废话总结：Photoshop并不是一款合适的界面设计工具，Sketch可以带你飞~</p>
+<p style="text-indent:2em;color:red">不算废话的废话总结：<br/>如果是用来修图瘦腿瘦脸美白等位图操作——     Photoshop<br/>
+	如果是做轻巧的界面设计工具和icon等矢量图操作——    Sketch
+</p>
 
 ***
 
 <h2 style="text-align:center;color:red">Sketch最火爆的标注插件————Measure</h2>
 
 <p style="text-indent:2em">对于前端仔，疲于页面业务逻辑的实现，当然是希望能在网页ui实现上，越快速越好。因此，icon的尺寸大小、用色、字体大小、间距等等这些细节上的确认，如果能在图上一次性加入一些标注信息和切图等，减小前端仔和ui大大的沟通成本，这将大大提高前端er的工作效率 </p>
-<p style="text-indent:2em">为此，隆重推荐用Sketch插件————Measure！！！从此妈妈再也不用担心我罗里吧嗦的繁琐切图问题了~</p>
+<p style="text-indent:2em">为此，隆重推荐用Sketch插件————<span style="color:red;font-size:16px">Measure</span>！！！从此妈妈再也不用担心我罗里吧嗦的繁琐切图问题了~</p>
 
 <div>附上Measure的下载链接：<a href="http://utom.design/measure/">http://utom.design/measure/</a></div>
 
@@ -72,6 +75,11 @@ Sketch:专注网页设计和ui设计
 <ul>
     <li>可以在页面上自动标记出相关参数（间隔，尺寸，属性，备注）</li>
     <li>规范导出图，一建生成html，包括css样式</li>
+    <li>更加强力的导出功能（例如：原生支持 @2x 图片导出）</li>
+    <li>像素编辑支持全像素对齐</li>
+    <li>内置很多ios，android，web的模板尺寸</li>
+    <li>不限制大小的画布</li>
+    <li>...</li>
 </ul>
 
 <div >
@@ -82,9 +90,12 @@ Sketch:专注网页设计和ui设计
     <img src="/images/sketch/15.jpg" />
 </div>
 <p style="text-indent:2em">在Sketch Toolbox可以下载Sketch的大部分插件（附件有带压缩包，但该工具仍存在bug不太稳定，容易用着用着就崩溃掉~慎重~~）</p>
-<p>另外，Sketch3.4版本后，已支持自带插件管理工具，Sketch Toolbox基本可以退休了<img src="/images/sketch/21.png" style="width:10%"/>
+<p>另外，Sketch3.4版本后，已支持自带插件管理工具，Sketch Toolbox基本可以退休了。
+<div>
+    <img src="/images/sketch/21.png" style="width:10%;margin:auto"/>
+</div>
 
-* 自带插件管理工具(点击插件 => 管理插件 => 在弹窗工具箱中可管理已有的sketch插件 or 下载新的插件)
+<p style="color:red">自带插件管理工具(点击插件 => 管理插件 => 在弹窗工具箱中可管理已有的sketch插件 or 下载新的插件)</p>
 
 <img src="/images/sketch/22.jpg" style="width:50%"/>
 <img src="/images/sketch/23.jpg" style="width:50%"/>
@@ -102,10 +113,8 @@ Sketch:专注网页设计和ui设计
     <img src="/images/sketch/4.jpg" style="width:30%" />
 </div>
 
-<b>对前端有用的小技巧</b>
-
-<ol>
-    <li>标尺使用（快速切图+快速导出图+查看图片标注）
+<ul>
+    <li> <span style="color:red">1、标尺使用（快速切图+快速导出图+查看图片标注）</span>
         <p>step0:选中所有图层，找到measure插件，选择工具栏</p>
         <div>
             <img src="/images/sketch/16.jpg" style="width:70%"/>
@@ -120,19 +129,19 @@ Sketch:专注网页设计和ui设计
             <img src="/images/sketch/19.jpg" style="width:70%"/>
         </div>
     </li>
-    <li>快捷键
+    <li><span style="color:red">2、快捷键</span>
         <p style="text-indent:2em">以下列入若干个前端仔常使用的快捷键，让你的工作效率xiu~xiu~xiu~</p>
         <div style="text-align:center">
             <img src="/images/sketch/14.jpg"  />
         </div>
     </li>
-    <li>ui图在移动端可预览（Mirror）
+    <li><span style="color:red">3、ui图在移动端可预览（Mirror）</span>
         <p style="text-indent:2em">Mirror:按照图例方式点开，必须在同个局域网内，移动ios设备安装好Sketch Mirror软件，即可在手机上预览ui图</p>
         <div style="text-align:center">
             <img src="/images/sketch/24.jpg"  style="width:70%"/>
         </div>
     </li>
-</ol>
+</ul>
 
 
 get more，click this:<a href="https://www.jianshu.com/p/46284dbe51e6">https://www.jianshu.com/p/46284dbe51e6</a> or 自行百度谷歌啊
