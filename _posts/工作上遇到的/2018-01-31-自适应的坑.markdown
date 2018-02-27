@@ -48,17 +48,18 @@ picture做了一种声明的方式。
 
 &lt;picture&gt;的兼容性问题
 
-![<picture>标签的兼容性](/images/自适应的问题/picture的兼容性.jpg)
+![picture标签的兼容性](/images/自适应的问题/picture的兼容性.jpg)
+
 更新至2017年12月09日
 
-![<picture>标签的手机兼容性](/images/自适应的问题/picture手机兼容问题.jpg)
+![picture标签的手机兼容性](/images/自适应的问题/picture手机兼容问题.jpg)
 
 
 <p style="text-indent:2em">市面上大多的安卓机存在5.x系统或以下的不支持。虽然picture的兼容性还不是很好，但是可搭配这个类库picturefill.js，能很好的解决picture的浏览器兼容性问题，导入即可使用。</p>
 
 Picturefill.js
 
-http://scottjehl.github.io/picturefill/
+<a href="http://scottjehl.github.io/picturefill/">http://scottjehl.github.io/picturefill/</a>
 
 
 ### 二、使用特定技术手段
@@ -88,8 +89,11 @@ var offsetWidth = element.offsetWidth
 
 
 
-万象优图的api文档地址：https://cloud.tencent.com/document/api/460/6929
-https://cloud.tencent.com/document/api/460/6925
+万象优图的api文档地址：
+
+<a href="https://cloud.tencent.com/document/api/460/6929">https://cloud.tencent.com/document/api/460/6929</a>
+
+<a href="https://cloud.tencent.com/document/api/460/6925">https://cloud.tencent.com/document/api/460/6925</a>
 
 万象优图参数图.jpg
 
@@ -99,13 +103,13 @@ example:
 
 <img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100">
 
-https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100
+    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100
 
 限定缩略图宽度为100，另一边自适应
 
 <img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300">
 
-https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300
+    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300
 
 限定缩略图宽度为300，另一边自适应
 
@@ -114,14 +118,14 @@ https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381
 
 <img src="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/100x/quality/20!">
 
-https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/20!
+    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/20!
 
 150x为尺寸 quality为图片质量，分辨率
 
 
 <img src="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/60!">
 
-https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/60!
+    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/60!
 
 150x为尺寸 quality为图片质量，分辨率
 
@@ -144,10 +148,23 @@ Foresight.js 可以在装载图片之前知道用户的设备是否可以显示�
 
 
 
-总结
+整改规则
 
+情况一：图片尺寸已知的情况下
 
-<!-- 
-图片尺寸已知的情况下   &&   图片尺寸未知的情况下
+情况二：图片尺寸未知的情况下
 
-图片大于屏幕尺寸的处理方式   &&   图片小于屏幕尺寸的处理方式 -->
+情况三：图片尺寸大于设备屏幕的情况下
+
+    <img class="img-responsive">
+ 
+    .img-responsive{
+        display:inline-block;
+        height:auto;
+        max-width:100%;
+    }
+
+<img src="/images/自适应的问题/风景图.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
+
+情况四：图片尺寸小于设备屏幕的情况下
+
