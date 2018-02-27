@@ -71,21 +71,21 @@ Picturefill.js
 
 1、js获取元素的布局宽度
 
-var offsetWidth = element.offsetWidth
+    var offsetWidth = element.offsetWidth
 
 2、加载相对应的图片的宽度（只需在下载 url 后面附加相应的参数，就可以生成相应的缩略图）
 
- download_url?imageMogr2/auto-orient
-                         /thumbnail/
-                         /strip
-                         /gravity/
-                         /crop/
-                         /scrop/
-                         /rotate/
-                         /format/
-                         /quality/
-                         /cgif/
-                         /interlace/
+    download_url?imageMogr2/auto-orient
+                            /thumbnail/
+                            /strip
+                            /gravity/
+                            /crop/
+                            /scrop/
+                            /rotate/
+                            /format/
+                            /quality/
+                            /cgif/
+                            /interlace/
 
 
 
@@ -164,7 +164,20 @@ Foresight.js 可以在装载图片之前知道用户的设备是否可以显示�
         max-width:100%;
     }
 
-<img src="/images/自适应的问题/风景图.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
+<img src="../../images/自适应的问题/风景图.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
 
 情况四：图片尺寸小于设备屏幕的情况下
+
+    <img class="img-responsive">
+ 
+    .img-responsive{
+        height:auto;
+        margin:auto;
+        max-width:100%;
+    }
+
+<div style="">
+    <img src="../../images/sketch/20.jpg" style="height:auto;margin:auto;max-width:100%;"/>
+</div>
+
 

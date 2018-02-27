@@ -1,0 +1,100 @@
+---
+title: nodejs入门
+date: '2018-02-27 20:00:00'
+categories: [
+Internet
+]
+layout: post
+author: xy
+---
+
+### 
+
+Node.js是基于Chrome V8引擎的，运行于服务端的JavaScript。使用高效、轻量级的事件驱动、非阻塞I/O模型
+
+几个特点：
+
+why Chrome V8？
+
+Chrome V8引擎会编译、执行JavaScript代码，运行效率极高
+
+why 轻量级?
+
+单线程。通过事件轮询的方式来实现并行操作。减少内存开销
+
+why 事件驱动?
+
+通过事件或状态的变化来进行程序的流程控制。一旦事件被检测到，则调用相应的函数，把该任务压入执行队列中。
+
+
+why 非阻塞I/O?
+
+阻塞是在调用结果回来之前，线程挂起，只有等结果返回之后才会继续执行。非阻塞则在等待结果返回之前，不会阻塞当前线程。不会傻等I/O语句结束就会执行后面的语句。Node.js在执行的过程中会维护一个事件队列。
+
+
+node的缺点
+
+不擅长cpu密集型任务
+
+栗子：
+
+    // 这就是一个cpu密集型的操作
+    for (let i = 0; i < 1000000; i++) {
+        console.log(i);
+    }
+    console.log('另外的任务')//由于是单线程，任务b会等到任务a执行完毕后才执行
+
+![阻塞](/images/nodeJS/单线程.jpg)
+
+
+现在主流的web服务器
+
+Apache、Nginx、lls
+
+Apache :世界使用排名第一的web服务器软件。几乎可以运行在所有计算机平台上
+
+Nginx :高效的http服务器，可做一个高效的负载均衡反向代理
+
+lls : 微软主推的服务器。强大灵活，安全性
+
+
+node简单入门
+
+    const http = require('http')
+    //创建服务器
+    const server = http.createServer((req,res) =>{
+        //设置状态码
+        res.statusCode = 200
+        res.setHeader({'Content-Type','text/plian'})
+        res.end('say hello')
+    })
+    server.listen(8000,function(){
+        //一个callback函数
+    })
+
+
+
+主流的node 开发框架
+
+Express
+
+    npm install express --g
+
+基本的路由演示：
+
+    var express = require('express')
+    var app = express()
+
+    app.get('/home',function(request,response){//get,post等多种传输方法
+        //response.send('hello')
+        const body ={
+            key:value
+        }
+        response.json(body)//返回一个json
+    })
+    app.listen(3000)
+
+---------------
+
+Koa
+
