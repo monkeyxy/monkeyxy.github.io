@@ -1,0 +1,153 @@
+---
+title: 图片自适应方案
+date: '2018-01-31 15:00:00'
+categories: [
+    work
+]
+layout: post
+author: xy
+---
+
+图片自适应的问题，一般前端都是直接通过css样式控制，
+
+    <img class="img-responsive">
+ 
+    .img-responsive{
+        display:inline-block;
+        height:auto;
+        max-width:100%;
+    }
+
+这串代码并不陌生吧~如下图处理
+
+<img src="/images/自适应的问题/风景图.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
+
+
+<p style="text-indent:2em">图片响应式化的第一步是让它自适应，移除高、宽属性然后设置max-width属性为100%。然而这并不能从根本上解决问题。问题在于，那样做会不得不创建一张大尺寸高分辨率的图像，很明显这种图片并不利于移动终端设备的接收。一般在手机上访问响应式网页里的图片，只是把分辨率做了一个缩放，手机还是下载那一张大的图片，很浪费带宽，打开一个网站是很耗费时间的。</p>
+
+<p style="text-indent:2em">让浏览器根据分辨率自动识别图片是最好的方法。目前总结有几种前端可用备选的解决方案</p>
+
+<ul>    
+    <li>创建一个新的（HTML）元素</li>
+    <li>使用特定技术手段</li>
+</ul>
+
+
+### 一、使用&lt;picture&gt;标签
+
+picture做了一种声明的方式。
+
+    <picture>  
+        <source srcset="large.jpg" media="(min-width: 800px)">  
+        <source srcset="medium.jpg" media="(min-width: 600px)">  
+        <img srcset="small.jpg">  
+    </picture> 
+
+<p style="text-indent:2em">其中img元素是默认情况下显示的图片源，在其上面的两个source元素则是在特定媒体查询条件下显示的图片。</p>
+
+
+&lt;picture&gt;的兼容性问题
+
+![<picture>标签的兼容性](/images/自适应的问题/picture的兼容性.jpg)
+更新至2017年12月09日
+
+![<picture>标签的手机兼容性](/images/自适应的问题/picture手机兼容问题.jpg)
+
+
+<p style="text-indent:2em">市面上大多的安卓机存在5.x系统或以下的不支持。虽然picture的兼容性还不是很好，但是可搭配这个类库picturefill.js，能很好的解决picture的浏览器兼容性问题，导入即可使用。</p>
+
+Picturefill.js
+
+http://scottjehl.github.io/picturefill/
+
+
+### 二、使用特定技术手段
+
+
+---------------------
+
+万象优图，使用url+参数获取对应的自适应图片
+
+1、js获取元素的布局宽度
+
+var offsetWidth = element.offsetWidth
+
+2、加载相对应的图片的宽度（只需在下载 url 后面附加相应的参数，就可以生成相应的缩略图）
+
+ download_url?imageMogr2/auto-orient
+                         /thumbnail/
+                         /strip
+                         /gravity/
+                         /crop/
+                         /scrop/
+                         /rotate/
+                         /format/
+                         /quality/
+                         /cgif/
+                         /interlace/
+
+
+
+万象优图的api文档地址：https://cloud.tencent.com/document/api/460/6929
+https://cloud.tencent.com/document/api/460/6925
+
+万象优图参数图.jpg
+
+![万象优图参数图](/images/自适应的问题/万象优图参数图.jpg)
+
+example:
+
+<img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100">
+
+https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100
+
+限定缩略图宽度为100，另一边自适应
+
+<img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300">
+
+https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300
+
+限定缩略图宽度为300，另一边自适应
+
+
+========华丽丽的分割线=========
+
+<img src="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/100x/quality/20!">
+
+https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/20!
+
+150x为尺寸 quality为图片质量，分辨率
+
+
+<img src="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/60!">
+
+https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/60!
+
+150x为尺寸 quality为图片质量，分辨率
+
+
+
+先用js来判断设备的大小，再利用url的参数来配置与屏幕相对应的尺寸和分辨率
+
+----------------------------
+
+
+Foresight.js
+
+Foresight.js 可以在装载图片之前知道用户的设备是否可以显示高分辨率的图片，例如第三代 iPad。同时它也可以知道用户的网络情况，是快还是慢。这样 foresight.js 就可以根据用户的实际情况装载不同的图片。
+
+
+
+
+--------------------------------
+
+
+
+
+总结
+
+
+<!-- 
+图片尺寸已知的情况下   &&   图片尺寸未知的情况下
+
+图片大于屏幕尺寸的处理方式   &&   图片小于屏幕尺寸的处理方式 -->
