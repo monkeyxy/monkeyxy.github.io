@@ -49,7 +49,7 @@ node的缺点
 
 --------------
 
-<h2><b>现在主流的web服务器</h2></b>
+<h2><b>现在主流的web服务器</b></h2>
 
 Apache、Nginx、lls
 
@@ -64,7 +64,7 @@ Apache、Nginx、lls
 -----------------
 
 
-<h2><b>node简单入门代码</h2></b>
+<h2><b>node简单入门代码</b></h2>
 
     const http = require('http')
     //创建服务器
@@ -81,7 +81,7 @@ Apache、Nginx、lls
 
 ----------------
 
-<h2><b>主流的node 开发框架</h2></b>
+<h2><b>主流的node 开发框架</b></h2>
 
 <b style="color:#f00">Express</b>
 
