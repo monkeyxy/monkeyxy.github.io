@@ -8,17 +8,15 @@ layout: post
 author: xy
 ---
 
-
 整改规则
 
-<h2 style="color:red">情况一：图片尺寸大于设备屏幕的情况下</h2>
+<h2 style="color:red">情况一：图片地址是外链</h2>
 
-1、图片地址是外链
+不知道图片尺寸的情况下，可通过css方式来控制
 
-不知道图片尺寸的时候，可以通过css方式来控制
-
-    <img class="img-responsive">
- 
+    <div>
+        <img class="img-responsive">
+    </div>
     .img-responsive{
         display:inline-block;
         height:auto;
@@ -29,13 +27,20 @@ author: xy
 <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1723503858,1481549703&fm=200&gp=0.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
 
 
-2、图片是按照腾讯云上传图的规则
+<h2 style="color:red">情况二：图片是通过腾讯云上传</h2>
 
    var offsetWidth = element.offsetWidth
 
-设置url的参数，通过w/h来适配屏幕，加载相符分辨率的图片
+先获取图片的尺寸
 
-example:
+    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageInfo
+
+
+用js来判断设备的大小，再利用url的参数来配置与屏幕相对应的尺寸和分辨率
+
+1、图片尺寸大于屏幕
+
+example:设置url的参数，通过w/h来适配屏幕，加载相符分辨率的图片
 
 <img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100">
 
@@ -50,37 +55,16 @@ example:
 限定缩略图宽度为300，另一边自适应
 
 
-   
+2、图片尺寸小于屏幕
+
+通过css来控制img的样式即可。
 
 
-<h2 style="color:red">情况二：图片尺寸小于设备屏幕的情况下</h2>
-
-1、图片地址是外链
-
-不知道图片尺寸的时候，可以通过css方式来控制
-
-    <div style="text-align:center">
-        <img class="img-responsive">
-    </div>
- 
-    .img-responsive{
-        height:auto;
-        margin:auto;
-        max-width:100%;
-    }
-
-<div style="text-align:center">
-    <img src="../../images/sketch/21.png" style="height:auto;max-width:100%;"/>
-</div>
-
-2、图片是按照腾讯云上传图的规则
+---------------------------------
 
 
 
-
-
-
-<h1 style="color:red">补充</h2>
+<h2 style="color:red">补充</h2>
 
 <p style="text-indent:2em">图片响应式化的第一步是让它自适应，移除高、宽属性然后设置max-width属性为100%。然而这并不能从根本上解决问题。问题在于，那样做会不得不创建一张大尺寸高分辨率的图像，很明显这种图片并不利于移动终端设备的接收。一般在手机上访问响应式网页里的图片，只是把分辨率做了一个缩放，手机还是下载那一张大的图片，很浪费带宽，打开一个网站是很耗费时间的。</p>
 
