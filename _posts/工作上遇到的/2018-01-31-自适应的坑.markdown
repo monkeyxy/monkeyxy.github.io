@@ -1,5 +1,5 @@
 ---
-title: 图片自适应方案
+title: 图片自适应整改规则
 date: '2018-01-31 15:00:00'
 categories: [
     work
@@ -8,7 +8,14 @@ layout: post
 author: xy
 ---
 
-图片自适应的问题，一般前端都是直接通过css样式控制，
+
+整改规则
+
+<h2 style="color:red">情况一：图片尺寸大于设备屏幕的情况下</h2>
+
+1、图片地址是外链
+
+不知道图片尺寸的时候，可以通过css方式来控制
 
     <img class="img-responsive">
  
@@ -17,11 +24,63 @@ author: xy
         height:auto;
         max-width:100%;
     }
+栗子:
 
-这串代码并不陌生吧~如下图处理
+<img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1723503858,1481549703&fm=200&gp=0.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
 
-<img src="/images/自适应的问题/风景图.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
 
+2、图片是按照腾讯云上传图的规则
+
+   var offsetWidth = element.offsetWidth
+
+设置url的参数，通过w/h来适配屏幕，加载相符分辨率的图片
+
+example:
+
+<img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100">
+
+    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100
+
+限定缩略图宽度为100，另一边自适应
+
+<img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300">
+
+    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300
+
+限定缩略图宽度为300，另一边自适应
+
+
+   
+
+
+<h2 style="color:red">情况二：图片尺寸小于设备屏幕的情况下</h2>
+
+1、图片地址是外链
+
+不知道图片尺寸的时候，可以通过css方式来控制
+
+    <div style="text-align:center">
+        <img class="img-responsive">
+    </div>
+ 
+    .img-responsive{
+        height:auto;
+        margin:auto;
+        max-width:100%;
+    }
+
+<div style="text-align:center">
+    <img src="../../images/sketch/21.png" style="height:auto;max-width:100%;"/>
+</div>
+
+2、图片是按照腾讯云上传图的规则
+
+
+
+
+
+
+<h1 style="color:red">补充</h2>
 
 <p style="text-indent:2em">图片响应式化的第一步是让它自适应，移除高、宽属性然后设置max-width属性为100%。然而这并不能从根本上解决问题。问题在于，那样做会不得不创建一张大尺寸高分辨率的图像，很明显这种图片并不利于移动终端设备的接收。一般在手机上访问响应式网页里的图片，只是把分辨率做了一个缩放，手机还是下载那一张大的图片，很浪费带宽，打开一个网站是很耗费时间的。</p>
 
@@ -31,7 +90,6 @@ author: xy
     <li>创建一个新的（HTML）元素</li>
     <li>使用特定技术手段</li>
 </ul>
-
 
 ### 一、使用&lt;picture&gt;标签
 
@@ -60,6 +118,7 @@ picture做了一种声明的方式。
 Picturefill.js
 
 <a href="http://scottjehl.github.io/picturefill/">http://scottjehl.github.io/picturefill/</a>
+
 
 
 ### 二、使用特定技术手段
@@ -99,36 +158,6 @@ Picturefill.js
 
 ![万象优图参数图](/images/自适应的问题/万象优图参数图.jpg)
 
-example:
-
-<img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100">
-
-    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100
-
-限定缩略图宽度为100，另一边自适应
-
-<img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300">
-
-    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/300
-
-限定缩略图宽度为300，另一边自适应
-
-
-========华丽丽的分割线=========
-
-<img src="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/100x/quality/20!">
-
-    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/20!
-
-150x为尺寸 quality为图片质量，分辨率
-
-
-<img src="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/60!">
-
-    https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageMogr2/thumbnail/150x/quality/60!
-
-150x为尺寸 quality为图片质量，分辨率
-
 
 
 先用js来判断设备的大小，再利用url的参数来配置与屏幕相对应的尺寸和分辨率
@@ -139,45 +168,4 @@ example:
 Foresight.js
 
 Foresight.js 可以在装载图片之前知道用户的设备是否可以显示高分辨率的图片，例如第三代 iPad。同时它也可以知道用户的网络情况，是快还是慢。这样 foresight.js 就可以根据用户的实际情况装载不同的图片。
-
-
-
-
---------------------------------
-
-
-
-
-整改规则
-
-情况一：图片尺寸已知的情况下
-
-情况二：图片尺寸未知的情况下
-
-情况三：图片尺寸大于设备屏幕的情况下
-
-    <img class="img-responsive">
- 
-    .img-responsive{
-        display:inline-block;
-        height:auto;
-        max-width:100%;
-    }
-
-<img src="../../images/自适应的问题/风景图.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
-
-情况四：图片尺寸小于设备屏幕的情况下
-
-    <img class="img-responsive">
- 
-    .img-responsive{
-        height:auto;
-        margin:auto;
-        max-width:100%;
-    }
-
-<div style="">
-    <img src="../../images/sketch/20.jpg" style="height:auto;margin:auto;max-width:100%;"/>
-</div>
-
 
