@@ -6,8 +6,8 @@ permalink:           pretty
 
 # Setup
 title:               XY'S BLOG
-tagline:             "yes, this is lovely xy."
-description:         "i am so cute."
+tagline:             "learn more."
+description:         "coding."
 url:                 https://monkeyxy.github.io/
 baseurl:             ''
 paginate:            1

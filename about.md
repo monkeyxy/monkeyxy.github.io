@@ -4,5 +4,4 @@ title: About
 order: 20
 ---
 
-# i am lovely xy !!
-# and i love kaka !!!
+学无止境~
