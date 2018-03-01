@@ -1,5 +1,5 @@
 ---
-title: 图片自适应整改规则
+title: 图片自适应的整改规则
 date: '2018-01-31 15:00:00'
 categories: [
     work
