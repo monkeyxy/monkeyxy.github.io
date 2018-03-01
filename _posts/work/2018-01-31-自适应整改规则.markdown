@@ -10,7 +10,9 @@ author: xy
 
 整改规则
 
-<h2 style="color:red">情况一：图片地址是外链</h2>
+<h2 style="color:red">情况一：图片尺寸未知</h2>
+
+对应项目中的实际情况，即：图片地址是外链
 
 不知道图片尺寸的情况下，可通过css方式来控制
 
@@ -22,12 +24,16 @@ author: xy
         height:auto;
         max-width:100%;
     }
+
 栗子:
 
 <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1723503858,1481549703&fm=200&gp=0.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
 
+-----------------
 
-<h2 style="color:red">情况二：图片是通过腾讯云上传</h2>
+<h2 style="color:red">情况二：图片尺寸已知</h2>
+
+对应项目中的实际情况，即：图片是通过接口上传到腾讯云的
 
    var offsetWidth = element.offsetWidth
 
@@ -40,7 +46,9 @@ author: xy
 
 1、图片尺寸大于屏幕
 
-example:设置url的参数，通过w/h来适配屏幕，加载相符分辨率的图片
+example:
+
+设置url的参数，通过w/h来适配屏幕，加载相符分辨率的图片
 
 <img src ="https://gfwealthci-10081473.image.myqcloud.com/f42f1daa-1553-4268-be27-e01886381af9?imageView2/0/w/100">
 
