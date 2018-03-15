@@ -1,0 +1,265 @@
+---
+title: 前端异步问题
+date: '2018-03-27 22:00:00'
+categories: [
+Front
+]
+layout: post
+author: xy
+---
+
+### 一、
+
+**同步和异步问题**
+
+javascript是“单线程”的语言，只有一条线程，一个时间只能做一件事，不能执行多个流程。JavaScript中的同步和异步又是如何理解呢？
+
+同步：主线程上排队执行的任务，只有前一个任务执行完毕，才能执行下一个任务
+
+异步：不进入主线程，而是进入“任务队列”的任务，只有等主线程执行完毕，任务队列会通知主线程请求执行任务，该任务列队才会进入主线程执行
+
+举个栗子来理解下同步和异步吧~
+
+```javascript
+    console.log('1')
+    setTimeout(function(){
+        console.log('2')
+    },0)
+    console.log('3')
+```
+
+如同火狐浏览器api文档提到的
+>Because even though setTimeout was called with a delay of zero, it's placed on a queue and scheduled to run at the next opportunity, not immediately. Currently executing code must complete before functions on the queue are executed, the resulting execution order may not be as expected.
+
+setTimeout尽管延迟时间未0，但是里面的函数会被放入一个任务队列中，必须在主线程的执行完毕后，才会执行任务队列中的任务。因此上诉栗子执行的结果是：1、3、2
+
+前面太简单了？？我们再举个复杂的栗子
+
+```javascript
+    let a = new Promise(  
+        function(resolve, reject) {  
+            console.log(1)  
+            setTimeout(() => console.log(2), 0)  
+            console.log(3)  
+            console.log(4)  
+            resolve(true)  
+        }  
+    )  
+    a.then(v => {  
+    console.log(8)  
+    })  
+  
+    let b = new Promise(  
+        function() {  
+            console.log(5)  
+            setTimeout(() => console.log(6), 0)  
+        }  
+    )  
+  
+    console.log(7)
+```
+
+先记住，线程程执行任务的顺序是： 同步 => 异步 => 回调
+
+上述栗子中，先分割哪部分属于同步，异步，回调
+
+答案是：1、3、4、5、7、8、2、6
+
+应该有不少童鞋会以为答案是 7、1、3、4、2、5、6、8
+
+分析下这个题目，有三个容易出错的地方：
+
+1、new promise 不就是一个异步么？不是的。promise的异步在于then 和catch部分，promise里面的仍属于同步。 
+
+同步部分输出：1、3、4、5、7
+
+2、then属于异步
+
+输出8
+
+3、setTimeout为回调
+
+输出2、6
+
+
+**Promise**
+
+在promise没出现之前，我们经常是通过回调函数来解决异步的问题
+
+栗子：
+
+```javascript
+    fun1(function(res1){
+        fun2(function(res2){
+            fun3(function(res2){
+                ...
+            })
+        })
+    })
+    
+```
+
+函数的执行顺序是fun1,fun2,fun3,由外向内执行，达到了某种意义上的顺序执行，每一层回调函数都需要依赖上一层的回调执行完，所以形成了层层嵌套的回调地狱。但是在代码上却增加了阅读难度，可读性大大降低。
+
+
+![promise对象](/images/js/promise.jpg)
+
+Promise是一个函数，这个函数上包含了我们经常使用的方法,reject,resolve,then,catch等等
+
+
+先上一段常见的promise写法
+
+```javascript
+    new Promise(param).then(function(res){
+        console.log('成功的回调',res)
+    }).catch(function(err){
+        console.log('失败的回调',err)
+    })
+```
+可见promise最大的好处是在异步的过程中，执行代码和处理结果的代码清晰分离。
+
+Promise传入两个参数resolve,reject。当异步操作成功后，Promise会返回一个值，这个状态为resolved；当异步操作失败后，Promise会抛出一个错误，这个状态为rejected
+
+```javascript
+    function getData(){
+        return new Promise(function(resolve,reject){
+            if(...){
+                resolve('something')
+            }else{
+                reject('error')
+            }
+        })
+    }
+    const obj={'num':1}//参数
+    getData(obj).then(function(res){
+        console.log('resolve返回的内容',res)//res: something
+    }).catch(function(err){
+        console.log('reject返回的内容',err)//err: error
+    })
+```
+
+Promise.all:接收的是promise数组，接收的promise数组同时请求，等待结果返回。
+
+```javascript
+    var promise1 = new Promise(function(resolve,reject){
+        //doing something
+    })
+    var promise2 = new Promise(function(resolve,reject){
+        //doing something
+    })
+
+    var all = Promise.all([promise1,promise2]).then(function(){
+        //等promise1和promise2执行结果返回之后，再执行all
+    })
+    
+```
+
+返回最开始的那个回调地狱的例子，那么用promise写的话又是如何的呢？
+
+```javascript
+    new Promise(function(res,rej){
+        //
+    }).then(function(){
+        return new Promise(function(res,rej){
+            //
+        })
+    }).then(function(){
+         return new Promise(function(res,rej){
+            //
+        })
+    }).catch(function(){
+
+    })
+
+```
+
+then方法可以返回一个promise。
+
+以上的写法仍处于混乱，可以抽离成以下写法
+
+```javascript
+    function task1(){
+        return new Promise(function(res,rej){
+            //doing something
+        })
+    }
+     function task2(){
+        return new Promise(function(res,rej){
+            //doing something
+        })
+    }
+     function task3(){
+        return new Promise(function(res,rej){
+            //doing something
+        })
+    }
+    task1()
+        .then(task2())
+        .then(task3())
+        .then(function(){
+            //....task1 2 3结果拿到后的处理
+        })
+```
+
+
+
+Promise对象的缺点：
+1、无法取消Promise，一旦新建它就会立即执行，无法中途取消。
+
+2、如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。
+
+3、当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
+
+
+**Generator**
+
+可以让你”暂停“一个函数（而不暂停整个程序），它也能你从上至下写异步函数。
+
+Generator的声明方式类似一般的函数声明，多了个*号，并且一般可以在函数内看到yield
+
+```javascript
+    function* generator() {
+        yield 'a';
+        yield 'b';
+        yield 'c';
+    }
+```
+
+分段执行
+
+
+**Async/Await**
+
+ES7的特性，是生成器和promise更高级的封装
+
+
+
+
+
+
+
+
+按照前面说的执行顺序，可思考下题的答案
+
+```javascript
+    console.log('script1');
+
+    setTimeout(function() {
+    console.log('setTimeout1');
+    }, 300);
+
+    Promise.resolve().then(function() {
+    console.log('promise1');
+    }).then(function() {
+    console.log('promise2');
+    });
+
+    console.log('script2');
+
+    setTimeout(function() {
+    console.log('setTimeout2');
+    Promise.resolve().then(function() {
+        console.log('promise3');
+    })
+    }, 0);
+```
