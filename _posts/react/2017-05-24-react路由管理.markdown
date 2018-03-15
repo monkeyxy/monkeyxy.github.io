@@ -14,6 +14,7 @@ React Router是专为React设计的路由解决方案。
 
 #### 一、简单的Route
 
+```javascript
     import { Router,Route,hashHistory } from 'react-router';
     import Home from 'home.jsx';
     improt Search from 'search.jsx';
@@ -24,3 +25,4 @@ React Router是专为React设计的路由解决方案。
             <Route path ='/search' component={ Search }></Route>
         </Router>
     )
+```

@@ -32,7 +32,7 @@ author: xy
 
     HTML语言直接写在js中，不加任何引号，这就是JSX的语法。
     
-    ```
+```javascript
     let arr =['a','b','c'];
     React.render( 
                 <div>{
@@ -42,7 +42,7 @@ author: xy
         }</div>,
             document.getElementById("container")
         )
-    ```
+```
     JSX是JavaScript和HTML的完美结合。<span style="font-weight:bold;color:#ac4142">合理利用本地API达到跨平台的效果</span>
 
 * 4 **组件化**
@@ -51,29 +51,29 @@ author: xy
     
     *函数式组件*
 
-    ```
+```javascript
         const MyComponent = React.createClass({ 
             render: function(){ 
                 return<div className={this.props.className}/>;
             }
         })
    
-    ```
+```
     es6 class的写法
 
-    ```
+```javascript
         class MyComponent extends React.Compnent{
             render() {
                 return <div className={this.props.className}/>;
             }
         }
-    ```  
+```  
     React 0.14引入新语法来定义组件，使用属性作为参数的函数
-    ```
+```javascript
     const MyComponent = props =>{
         <div className={props.className}/>
     }
-    ```  
+```  
 
 
 

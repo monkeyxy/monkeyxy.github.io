@@ -23,6 +23,7 @@ state:是可变的。state是react中组件的一个对象。根据不同的状
 
 <p style="text-indent:2em">父组件将子组件需要的props传给子组件，子组件通过this.props来使用----通常都是通过子组件的props用父组件的东西。</p>
 
+```javascript
     class Parent React.Component({
         ...
         render(){
@@ -42,11 +43,13 @@ state:是可变的。state是react中组件的一个对象。根据不同的状
         }
         ...
     })
+```
 
 2、<子组件>向<父组件>传值
 
 <p style="text-indent:2em">父组件用子组件的东西。可以把传递的内容通过设置ref，写在子组件上。父组件通过ref操作子组件的属性。</p>
 
+```javascript
 	class Parent React.Component({
         constructor(props){
             super(props);
@@ -91,6 +94,7 @@ state:是可变的。state是react中组件的一个对象。根据不同的状
                 })
         }
     })
+```
 
 3、没有任何关系的组件间的传值
 

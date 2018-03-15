@@ -34,6 +34,7 @@ author: xy
 
 无状态组件的创建形式使代码的可读性更好，只有一个render的方法
 
+```javascript
     const StateLessComponent = ({data,page} =>{
         const colums = [.........]
         render() {
@@ -47,6 +48,8 @@ author: xy
             )
         }
     })
+```
+
 无状态的组件只需要一个render函数来实现，就不会有实例化的过程。不需要分配多余的内存，性能进一步提升。并且不能访问this对象，也没用组件的几个生命周期方法。
 
 ****
@@ -59,6 +62,7 @@ author: xy
 
 **React.createClass**
 
+```javascript
     const MyComponent = creatClass({
      ...
        render: function (){
@@ -67,9 +71,11 @@ author: xy
            )
        }
     })
+```
 
 **React.Component**
 
+```javascript
     class MyComponent extends React.Component(
         constructor(){
             super();//super用于类继承，在构造函数中用this，必须先使用super。
@@ -82,12 +88,14 @@ author: xy
             <div onClick = { this.myClick }>xx</div>
         }
     )
+```
 
 ****
 
 
 #### 四、添加组件验证器propTypes
 
+```javascript
     const MyComponent = creatClass({
        propType : {
             title:React.PropTypes.string.isRequired,
@@ -98,5 +106,5 @@ author: xy
            )
        }
     })
-
+```
 

@@ -16,15 +16,18 @@ author: xy
 
 不知道图片尺寸的情况下，可通过css方式来控制
 
+```html
     <div>
         <img class="img-responsive">
     </div>
+```
+```css
     .img-responsive{
         display:inline-block;
         height:auto;
         max-width:100%;
     }
-
+```
 栗子:
 
 <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1723503858,1481549703&fm=200&gp=0.jpg" style="display:inline-block;height:auto;max-width:100%;"/>
@@ -87,11 +90,13 @@ example:
 
 picture做了一种声明的方式。
 
+```html
     <picture>  
         <source srcset="large.jpg" media="(min-width: 800px)">  
         <source srcset="medium.jpg" media="(min-width: 600px)">  
         <img srcset="small.jpg">  
     </picture> 
+```
 
 <p style="text-indent:2em">其中img元素是默认情况下显示的图片源，在其上面的两个source元素则是在特定媒体查询条件下显示的图片。</p>
 
