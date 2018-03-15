@@ -1,6 +1,6 @@
 ---
-title: 前端异步问题
-date: '2018-03-27 22:00:00'
+title: promise,generator,async await
+date: '2018-03-05 22:00:00'
 categories: [
 Front
 ]
@@ -8,81 +8,8 @@ layout: post
 author: xy
 ---
 
-### 一、
+### 一、Promise
 
-**同步和异步问题**
-
-javascript是“单线程”的语言，只有一条线程，一个时间只能做一件事，不能执行多个流程。JavaScript中的同步和异步又是如何理解呢？
-
-同步：主线程上排队执行的任务，只有前一个任务执行完毕，才能执行下一个任务
-
-异步：不进入主线程，而是进入“任务队列”的任务，只有等主线程执行完毕，任务队列会通知主线程请求执行任务，该任务列队才会进入主线程执行
-
-举个栗子来理解下同步和异步吧~
-
-```javascript
-    console.log('1')
-    setTimeout(function(){
-        console.log('2')
-    },0)
-    console.log('3')
-```
-
-如同火狐浏览器api文档提到的
->Because even though setTimeout was called with a delay of zero, it's placed on a queue and scheduled to run at the next opportunity, not immediately. Currently executing code must complete before functions on the queue are executed, the resulting execution order may not be as expected.
-
-setTimeout尽管延迟时间未0，但是里面的函数会被放入一个任务队列中，必须在主线程的执行完毕后，才会执行任务队列中的任务。因此上诉栗子执行的结果是：1、3、2
-
-前面太简单了？？我们再举个复杂的栗子
-
-```javascript
-    let a = new Promise(  
-        function(resolve, reject) {  
-            console.log(1)  
-            setTimeout(() => console.log(2), 0)  
-            console.log(3)  
-            console.log(4)  
-            resolve(true)  
-        }  
-    )  
-    a.then(v => {  
-    console.log(8)  
-    })  
-  
-    let b = new Promise(  
-        function() {  
-            console.log(5)  
-            setTimeout(() => console.log(6), 0)  
-        }  
-    )  
-  
-    console.log(7)
-```
-
-先记住，线程程执行任务的顺序是： 同步 => 异步 => 回调
-
-上述栗子中，先分割哪部分属于同步，异步，回调
-
-答案是：1、3、4、5、7、8、2、6
-
-应该有不少童鞋会以为答案是 7、1、3、4、2、5、6、8
-
-分析下这个题目，有三个容易出错的地方：
-
-1、new promise 不就是一个异步么？不是的。promise的异步在于then 和catch部分，promise里面的仍属于同步。 
-
-同步部分输出：1、3、4、5、7
-
-2、then属于异步
-
-输出8
-
-3、setTimeout为回调
-
-输出2、6
-
-
-**Promise**
 
 在promise没出现之前，我们经常是通过回调函数来解决异步的问题
 
@@ -210,8 +137,7 @@ Promise对象的缺点：
 
 3、当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
-
-**Generator**
+### 二、Generator
 
 可以让你”暂停“一个函数（而不暂停整个程序），它也能你从上至下写异步函数。
 
@@ -227,39 +153,7 @@ Generator的声明方式类似一般的函数声明，多了个*号，并且一�
 
 分段执行
 
-
-**Async/Await**
+### 三、Async/Await
 
 ES7的特性，是生成器和promise更高级的封装
 
-
-
-
-
-
-
-
-按照前面说的执行顺序，可思考下题的答案
-
-```javascript
-    console.log('script1');
-
-    setTimeout(function() {
-    console.log('setTimeout1');
-    }, 300);
-
-    Promise.resolve().then(function() {
-    console.log('promise1');
-    }).then(function() {
-    console.log('promise2');
-    });
-
-    console.log('script2');
-
-    setTimeout(function() {
-    console.log('setTimeout2');
-    Promise.resolve().then(function() {
-        console.log('promise3');
-    })
-    }, 0);
-```
