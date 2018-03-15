@@ -128,9 +128,10 @@ then方法可以返回一个promise。
         })
 ```
 
-
+Promise的写法只是回调函数的改进，使用then之后，异步的执行更为清楚。但是一眼看过去也是一堆的then，还是没法得到好的改进。
 
 Promise对象的缺点：
+
 1、无法取消Promise，一旦新建它就会立即执行，无法中途取消。
 
 2、如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。
@@ -149,7 +150,52 @@ Generator的声明方式类似一般的函数声明，多了个*号，并且一�
         yield 'b';
         yield 'c';
     }
+    var result = generator()
+    result.next()//{value:'a',done:false}
+    result.next()//{value:'b',done:false}
+    result.next()//{value:'c',done:false}
+    result.next()//{value:undefined,done:true}
 ```
+
+yield和yield* 只能在generator函数内部使用，一般的函数内使用会报错
+
+```javascript
+    function generator() {
+        yield* 'a';
+        yield* 'b';
+        yield* 'c';
+    }
+    var result = generator()
+    result.next()//Uncaught ReferenceError: yield is not defined
+```
+
+yield*后面接受一个iterable object为参数，然后去迭代这个迭代器
+
+```javascript
+    function* yiled1(){
+        yield 'hello';
+    }
+    var result1 = yiled1()//该函数并不执行，返回的也不是函数的执行结果，而是内部状态的指针对象，迭代器，必须使用next方法，使得指针指向下一个状态
+    result1.next()// {value:'hello',done:false}
+
+    function* yiled2(){
+        yield* 'hello';
+    }
+    var result2 = yiled2()
+    result2.next()// {value:'h',done:false}
+
+    function* yiled3(){
+        yield helloFun();
+    }
+    function* helloFun(){
+        return 'hello'
+    }
+    var result3 = yiled3()
+    result3.next()// {value:helloFun,done:false}
+```
+
+
+
 
 分段执行
 
