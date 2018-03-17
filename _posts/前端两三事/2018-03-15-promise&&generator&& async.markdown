@@ -132,11 +132,8 @@ Promise的写法只是回调函数的改进，使用then之后，异步的执行
 
 Promise对象的缺点：
 
-1、无法取消Promise，一旦新建它就会立即执行，无法中途取消。
+无法取消Promise，一旦新建它就会立即执行，无法中途取消。
 
-2、如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。
-
-3、当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。
 
 ### 二、Generator
 
@@ -201,5 +198,80 @@ yield*后面接受一个iterable object为参数，然后去迭代这个迭代�
 
 ### 三、Async/Await
 
-ES7的特性，是生成器和promise更高级的封装
+ES7的特性，是生成器和promise更高级的封装。
 
+async是“异步”的简写。async/await 理解为先申明是一个async异步函数，await则是等待这个异步执行完成。
+
+async返回的是一个promise对象，看以下代码栗子
+
+```javascript
+    var hello =  function(){
+        return new Promise(function(resolve,reject){
+            resolve('hello world')
+        })
+    }
+
+    var test = async function(){
+        var result = await hello()//await只能用在async函数里
+        console.log('result:',result)
+    }
+    test()
+
+```
+
+对比promise，不用再写then和catch，那是如何捕获错误的？
+
+```javascript
+    var hello =  function(){
+        return new Promise(function(resolve,reject){
+            resolve('hello world')
+        })
+    }
+
+    var test = async function(){
+        try{
+            ...
+        }catch(err){
+            ...
+        }
+    }
+    test()
+```
+用try和catch捕获错误
+
+多个await的写法
+```javascript
+   var fun1 = function(){
+        return new Promise(function(resolve,reject){
+            if(2>1){ 
+				resolve('result1')
+			}else{
+				reject('fun1-err')
+			}
+        })
+    }
+    var fun2 = function(){
+        return new Promise(function(resolve,reject){
+            if(2<1){ 
+				resolve('result1')
+			}else{
+				reject('fun2-err')
+			}
+        })
+    }
+    var array = [fun1,fun2]
+    var test = async function(){
+		try{
+			for(let f of array){
+                console.log('成功获得结果',await f())
+            }
+
+		}catch(err){
+			console.log('失败的结果',err)
+		}
+        
+    }
+	await test()
+    //成功获得结果 result1
+    //失败的结果 fun2-err
+```
