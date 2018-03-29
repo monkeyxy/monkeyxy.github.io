@@ -1,5 +1,5 @@
 ---
-title: 拥塞控制+窗口滑动
+title: tcp拥塞控制+窗口滑动
 date: '2017-09-03 13:00:00'
 categories: [
 Internet

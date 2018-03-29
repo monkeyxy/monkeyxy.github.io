@@ -1,0 +1,74 @@
+---
+title: angular轻入门
+date: '2018-03-28 16:00:00'
+categories: [
+angular
+]
+layout: post
+author: xy
+---
+
+### 入坑前言
+
+前端开发者估计跟我的心思是一样的，刚对AngularJS写出了点头绪，懂了点皮毛，转眼升级版Angular4.x就出现了，心中是各种礼貌的问候的。。。
+
+![表情包1](/images/表情包/pic1.jpeg)
+
+默默擦眼泪。。。我们来看下要从哪几个方面入手。以下目录~
+
+> * 数据绑定
+> * 指令
+> * 模块
+> * 组件
+> * 服务
+> * TypeScript 简介
+
+Angular抛弃了原本的 ng-controller指令、复杂的$scope，保留了路由嵌套、依赖注入机制。还有一些指令的写法，例如ng-click 改成(click) 、ng-repeat改成 *ngFor等等，后续指令篇会详细提出。Angular的最大改造是用Typescript为默认开发语言，组件化的思维。
+
+入坑前需要了解一下Angular-Cli工具。在项目初始化的时候，可以开箱即用，搭配一系列完整的工具
+
+```
+npm install @angular/cli -g
+ng new study-ng
+cd study-ng
+ng serve
+```
+
+打开package.json文件
+```
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
+```
+
+* @angular/common:
+    * CommonModule：通用模块，包含内置指令ngIf，ngFor
+
+* @angular/core:包含多种常用的模块
+    * NgModule（模块定义装饰器）
+    * Component(组件定义装饰器)
+    * Directive (指令定义装饰器)
+    * ElemtRef (元素引用)
+    * ViewChild (获取子元素)
+    * Output Input EventEmitter Render 等等等。。。。
+
+* @angular/forms:
+    * Validators:表单校验
+
+* @angular/http:
+    * HttpModule:http请求模块
+
+* @angular/router:
+    * RouterModule:路由模块
+
+
+天啊噜！！太多了。~~ps:这些都是撸过代码后从头看理论概念的时候能理解透的。。。硬生生的啃文字，小火鸡我是受不了的。。。
+
+
+![表情包2](/images/表情包/pic2.jpeg)
