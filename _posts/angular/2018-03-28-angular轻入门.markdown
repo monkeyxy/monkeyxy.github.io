@@ -16,8 +16,8 @@ author: xy
 
 默默擦眼泪。。。我们来看下要从哪几个方面入手。以下目录~
 
-> * 数据绑定
 > * 指令
+> * 数据绑定
 > * 模块
 > * 组件
 > * 服务
@@ -72,3 +72,19 @@ ng serve
 
 
 ![表情包2](/images/表情包/pic2.jpeg)
+
+周期
+
+| 组件周期钩子函数  |  说明 |
+| :---- | :---- |
+| constructor(myService:MyService) | 类的构造器会再其他生命周期函数前调用，在该方法中完成服务的依赖注入 |
+| ngOnChanges | 当被绑定的输入属性的值发生变化时调用，首次调用一定会发生在 ngOnInit之前。（@input属性(输入属性)发生变化时，会调用。非此属性，不会调用。） |
+| ngOnInit | 只执行一次，dom操作可放在其中 |
+| ngDoCheck | 更新检测机制，如果组件内发生异步事件，就会检查整个组件树 |
+| ngAfterContentInit | 组件内容初始化之后调用 |
+| ngAfterContentChecked |  |
+| ngAfterViewInit | 组件视图初始化后调用 |
+| ngAfterViewChecked |  |
+| ngOnDestroy | 实例被销毁前调用，仅调用一次 |
+
+废话不多说，直接进入第二篇吧~指令
