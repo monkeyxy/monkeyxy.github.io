@@ -1,0 +1,63 @@
+---
+title: angular路由设置
+date: '2018-04-09 10:00:00'
+categories: [
+angular
+]
+layout: post
+author: xy
+---
+
+### route
+
+1、手动添加路由文件
+
+![手动添加路由文件](/images/angular/1.jpg)
+
+appRoutes的配置
+
+```javascript
+export const appRoutes:Routes=[
+  { path:'example',component:ExampleComponentComponent},
+  { path:'home',component:HomeComponent},
+  {
+    path:'',
+    redirectTo:'home',
+    pathMatch:'full'
+  }
+]
+```
+
+2、app.module.ts文件中引用
+
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router'
+import { appRoutes } from './route.module'
+
+
+import { AppComponent } from './app.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    RouterModule.forRoot(appRoutes),   //添加 ！！
+    BrowserModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+3、在index.html中添加
+
+```html
+<body>
+  <app-root></app-root>
+</body>
+```
