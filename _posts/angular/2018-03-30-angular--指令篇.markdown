@@ -10,27 +10,19 @@ author: xy
 
 ### Angular —— 指令
 
+**内置指令**
 
-NgClass
-
-NgClass接收一个对象，key为class名，value为值，表示是否用改样式
-
+NgClass:接收一个对象，key为class名，value为值，表示是否用改样式
 ```html
     <p [ngClass]="{'fadeIn'}">example</p>
     <p [ngClass]="{'fadeIn':!hidden}">example</p>
 ```
-
-NgStyle
-
-ngStyle设置dom元素的css属性，可以动态的
+NgStyle:设置dom元素的css属性，可以动态的
 ```html
 <div [ngStyle]="{'color':'#999'}">写样式的东西咯</div>
 <div [ngStyle]="{'color':gray?'#999':'#000'}">写样式的东西咯</div>
 ```
-
-NgFor
-
-创建dom元素，类似ng1中的ng-repeat
+NgFor:创建dom元素，类似ng1中的ng-repeat
 ```javascript
     const list = [ {name:'a'} ,{name:'b'}]
     const array = [1,2,3,4]
@@ -43,34 +35,16 @@ NgFor
     <li *ngFor="let item of array,let i = index">{{item}}第{{i}}个</li>
 </ul>
 ```
-
-NgIf
+NgIf:设置dom元素的展示或隐藏
 ```html
 <div *ngIf="show">要不要展示咧？<div>
 ```
 
+**自定义属性指令**
+
+每个组件都有用output和input属性
 
 
 
-1. angular的数据绑定采用什么机制？详述原理
-
-2. 两个平级界面块a和b，如果a中触发一个事件，有哪些方式能让b知道，详述原理
-
-3. 一个angular应用应当如何良好地分层？
-
-4. angular应用常用哪些路由库，各自的区别是什么？
-
-5. 如果通过angular的directive规划一套全组件化体系，可能遇到哪些挑战？
-
-6. 分属不同团队进行开发的angular应用，如果要做整合，可能会遇到哪些问题，如何解决？
-
-7. angular的缺点有哪些？
-
-8. 如何看待angular 1.2中引入的controller as 语法？
-
-9. 详述angular的“依赖注入”
-
-
-ng g c home --module app
 
 
