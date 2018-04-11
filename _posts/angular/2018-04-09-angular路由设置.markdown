@@ -17,15 +17,69 @@ author: xy
 appRoutes的配置
 
 ```javascript
+//定义并输出常量路由
 export const appRoutes:Routes=[
+  //地址栏输入 .../example，加载组件ExampleComponentComponent
   { path:'example',component:ExampleComponentComponent},
-  { path:'home',component:HomeComponent},
+  { path:'home',
+    component:HomeComponent,
+    children:[{//子路由   .../home/home-child,加载ChildComponent组件
+      path:'child',
+      component:ChildComponent,
+      //children:...
+    }]
+  },
+  { path:'home/brother',component:BrotherComponent},//下图示例
   {
+    //如果 地址栏没输入定义的路由就跳转到home路由界面
     path:'',
     redirectTo:'home',
     pathMatch:'full'
   }
 ]
+```
+目录结构
+```
+--- example
+--- home
+    ---child
+    ---brother
+
+```
+
+```
+  <div routerLink="/example">栗子</div>
+
+  <div routerLink="./brother">brother</div>
+
+  <div routerLink="child">child的内容会展示在当页面  router-outlet  中</div>
+
+  <div [routerLink]="['./child']">child的内容会展示在当页面---另一种写法</div>
+
+  <router-outlet></router-outlet>
+```
+
+![子路由的区别](/images/angular/2.jpg)
+
+另外，路由跳转中可加上参数
+
+```typescript
+import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
+
+@Component({
+ //忽略...
+})
+export class HomeComponent implements OnInit {
+
+  constructor(
+    public router:Router
+  ) { }
+
+  goTopage(page,queryParams){
+    this.router.navigate([page],{ queryParams: queryParam })
+  }
+}
 ```
 
 2、app.module.ts文件中引用
@@ -45,6 +99,7 @@ import { AppComponent } from './app.component';
     AppComponent,
   ],
   imports: [
+    //引用路由
     RouterModule.forRoot(appRoutes),   //添加 ！！
     BrowserModule,
   ],
