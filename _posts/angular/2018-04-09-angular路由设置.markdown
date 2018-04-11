@@ -42,9 +42,10 @@ export const appRoutes:Routes=[
 
 
 目录结构
+
 ![目录结构](/images/angular/3.jpg)
 
-```xml html
+```xml
   <div routerLink="/example">栗子</div>
 
   <div routerLink="./brother">brother</div>
@@ -52,7 +53,6 @@ export const appRoutes:Routes=[
   <div routerLink="child">child的内容会展示在当页面  router-outlet  中</div>
 
   <div [routerLink]="['./child']">child的内容会展示在当页面---另一种写法</div>
-
   <router-outlet></router-outlet>
 ```
 
