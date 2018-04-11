@@ -38,16 +38,13 @@ export const appRoutes:Routes=[
   }
 ]
 ```
+![子路由的区别](/images/angular/2.jpg)
+
+
 目录结构
-```
---- example
---- home
-    ---child
-    ---brother
+![目录结构](/images/angular/3.jpg)
 
-```
-
-```
+```xml html
   <div routerLink="/example">栗子</div>
 
   <div routerLink="./brother">brother</div>
@@ -58,8 +55,6 @@ export const appRoutes:Routes=[
 
   <router-outlet></router-outlet>
 ```
-
-![子路由的区别](/images/angular/2.jpg)
 
 另外，路由跳转中可加上参数
 
