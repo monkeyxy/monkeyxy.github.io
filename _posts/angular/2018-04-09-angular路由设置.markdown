@@ -12,7 +12,7 @@ author: xy
 
 ### 1、手动添加路由文件
 
-![添加路由文件](/images/angular/1.png)
+<img style="width: 40%" src="/images/angular/1.png">
 
 appRoutes的配置
 
