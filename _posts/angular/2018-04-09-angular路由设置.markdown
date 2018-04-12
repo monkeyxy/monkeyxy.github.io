@@ -8,15 +8,19 @@ layout: post
 author: xy
 ---
 
-### route
+## 一、route三步走
 
-1、手动添加路由文件
+### 1、手动添加路由文件
 
-![添加路由文件](/images/angular/1.jpg)
+![添加路由文件](/images/angular/1.png)
 
 appRoutes的配置
 
 ```javascript
+import { Routes } from "@angular/router";
+//引入组件等。。。。
+import { ChildComponent } from'./home/child/child.component'
+
 //定义并输出常量路由
 export const appRoutes:Routes=[
   //地址栏输入 .../example，加载组件ExampleComponentComponent
@@ -41,22 +45,62 @@ export const appRoutes:Routes=[
 ![子路由的区别](/images/angular/2.jpg)
 
 
-目录结构
-
-![目录结构](/images/angular/3.jpg)
-
 ```xml
   <div routerLink="/example">栗子</div>
 
   <div routerLink="./brother">brother</div>
 
   <div routerLink="child">child的内容会展示在当页面  router-outlet  中</div>
-
-  <div [routerLink]="['./child']">child的内容会展示在当页面---另一种写法</div>
+  <!-- <div [routerLink]="['./child']">child的内容会展示在当页面---另一种写法</div> -->
   <router-outlet></router-outlet>
 ```
 
-另外，路由跳转中可加上参数
+&lt;router-outlet&gt;路由占位符，可以理解为渲染路由组件的区域，一个组件只有一个无名的&lt;router-outlet&gt;可以有多个有名的&lt;router-outlet&gt;，例如：&lt;router-outlet name="a"&gt;、&lt;router-outlet name="b"&gt;
+
+
+### 2、app.module.ts文件中引用
+
+```javascript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router'
+import { appRoutes } from './route.module'
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    //注入模块中，forChild只能用于子路由，forRoot只能用于根模块
+    // forRoot有一个可选的配置参数，里面有四个选项
+    // enableTracing ：在console.log中打印出路由内部事件信息
+    // useHash ：把url改成hash风格 /#/
+    // initialNavigation ： 禁用初始导航，没用过。。
+    // errorHandler ：使用自定义的错误处理，来抛出报错信息；
+    RouterModule.forRoot(appRoutes,{useHash: true}),   //添加 ！！
+    BrowserModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+### 3、在index.html中添加
+
+```html
+<body>
+  <app-root></app-root>
+</body>
+```
+
+------------
+
+
+## 二、其他注意点
+
+### 1、路由跳转中可加上参数
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -77,37 +121,22 @@ export class HomeComponent implements OnInit {
 }
 ```
 
-2、app.module.ts文件中引用
+ps:可通过navigate()方法来实现页面跳转
+
+### 2、forChild的使用
+
+根模块中使用forRoot(),子模块中使用forChild()
 
 ```javascript
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router'
-import { appRoutes } from './route.module'
-
-
-import { AppComponent } from './app.component';
-
+import { Routes, RouterModule } from '@angular/router';
+export const routes: Routes = [];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
   imports: [
-    //引用路由
-    RouterModule.forRoot(appRoutes),   //添加 ！！
-    BrowserModule,
+    RouterModule.forChild(routes)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  // ...
 })
-export class AppModule { }
-```
-
-3、在index.html中添加
-
-```html
-<body>
-  <app-root></app-root>
-</body>
+export class ChildModule {  }
 ```
