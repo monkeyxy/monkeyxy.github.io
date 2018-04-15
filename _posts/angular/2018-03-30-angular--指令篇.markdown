@@ -16,19 +16,19 @@ author: xy
 
 <h2 style="text-align:center;color:red">结构指令</h2>
 
-### 1. NgClass:接收一个对象，key为class名，value为值，表示是否用改样式
+#### 1. NgClass:接收一个对象，key为class名，value为值，表示是否用改样式
 
 ```<p [ngClass]="{'fadeIn'}">example</p>```
 
 ```<p [ngClass]="{'fadeIn':!hidden}">example</p>```
 
-### 2. NgStyle:设置dom元素的css属性，可以动态的
+#### 2. NgStyle:设置dom元素的css属性，可以动态的
 
 ```<div [ngStyle]="{'color':'#999'}">写样式的东西咯</div>```
 
 ```<div [ngStyle]="{'color':gray?'#999':'#000'}">写样式的东西咯</div>```
 
-### 3. NgFor:创建dom元素，类似ng1中的ng-repeat
+#### 3. NgFor:创建dom元素，类似ng1中的ng-repeat
 ```javascript
     const list = [ {name:'a'} ,{name:'b'}]
     const array = [1,2,3,4]
@@ -41,7 +41,7 @@ author: xy
     <li *ngFor="let item of array,let i = index">{{item}}第{{i}}个</li>
 </ul>
 ```
-### 4. NgIf:设置dom元素的展示或隐藏
+#### 4. NgIf:设置dom元素的展示或隐藏
 ```html
 <div *ngIf="show">要不要展示咧？<div>
 ```
@@ -51,11 +51,11 @@ author: xy
 
 <h2 style="text-align:center;color:red">自定义属性指令</h2>
 
-<p>当内置指令还不能满足实际业务场景时，Angular中提供了自定义指令来满足特定的场景需求</p>
+<p style="text-indent:2em;">当内置指令还不能满足实际业务场景时，Angular中提供了自定义指令来满足特定的场景需求</p>
 
 ```ng generate directive child-directive```
 
-<p>此时app.module中已增加ChildDirectiveDirective指令</p>
+<p style="text-indent:2em;">此时app.module中已增加ChildDirectiveDirective指令</p>
 
 ```typescript
 //...
@@ -72,7 +72,7 @@ author: xy
 
 <!-- 每个组件都有用output和input属性 -->
 
-<p>举个栗子：给用自定义属性的内容加点特殊处理</p>
+<p style="text-indent:2em;">举个栗子：给用自定义属性的内容加点特殊处理</p>
 
 ```typescript
 import { Directive,ElementRef,Renderer2,Input } from '@angular/core';
@@ -91,18 +91,18 @@ export class ChildDirectiveDirective {
   }
 }
 ```
-<p>组件中添加该指令,可自定义展示的样式</p>
+<p style="text-indent:2em;">组件中添加该指令,可自定义展示的样式</p>
 
 ```<div [color]='"red"'>测试下咯</div>```
 
 --------------
 <h2 style="text-align:center;color:red">组件</h2>
 
-<p style="color:red">是时候祭出我的超简单基础组件第一套！！！switch组件的实现</p>
+<p style="color:red;text-indent:2em">是时候祭出我的超简单基础组件第一套！！！switch组件的实现</p>
 
-<p>look look 组件实现的部分</p>
+<p style="text-indent:2em;">look look 组件实现的部分</p>
 
-1. 第一步，实现switch的开关操作
+#### 1. 第一步，实现switch的样式
 
 <p>首先把switch轮子的样式写好</p>
 
@@ -116,8 +116,9 @@ export class ChildDirectiveDirective {
   </label> 
 </span>
 ```
-<p>具体css样式怎么撸的我就不贴了，自行撸！下面主要讲组件的实现</p>
+<p style="text-indent:2em;">具体css样式怎么撸的我就不贴了，自行撸！下面主要讲组件的实现</p>
 
+#### 2. 第二步，实现switch轮子的逻辑
 ```typescript
 import { Component, OnInit, Output, EventEmitter, Input, ViewChild,ElementRef,Renderer2 } from '@angular/core';
 
@@ -143,9 +144,10 @@ export class SwitchComponent implements OnInit {
     this.onchange.emit(this.switchInput.nativeElement.checked)//返回给子组件demo中
   }
 }
-
 ```
-<p>使用轮子的代码，使用的方法：</p>
+#### 3. 第三步，使用轮子的方式
+
+<p style="text-indent:2em;">使用轮子的代码，使用的方法：</p>
 
 ```<switch (onchange)="getSwitchVaule($event)"></switch>```
 
@@ -157,23 +159,26 @@ export class SwitchDemo {
   
 }
 ```
+#### 暂停一下，来一些啰嗦！！
 
-<p>看到这是否还会一脸懵逼？？？我们来解读下实现的过程。</p>
+<p style="text-indent:2em;">看到这是否还会一脸懵逼？？？我们来解读下实现的过程。</p>
 
-<p>使用&lt;switch&gt;标签名，可以实例化一个switch组件。</p>
+<p style="text-indent:2em;">使用&lt;switch&gt;标签名，可以实例化一个switch组件。</p>
 
-<p>获取到父组件通过@Output提供的onchange方法，在这个方法中，&lt;switch&gt;父组件处理switch开关的值，处理后的值。通过emit（）方法返还给demo组件中```public getSwitchVaule(v)```</p>
+<p style="text-indent:2em;">获取到父组件通过@Output提供的onchange方法，在这个方法中，&lt;switch&gt;父组件处理switch开关的值，处理后的值。通过emit（）方法返还给demo组件中```public getSwitchVaule(v)```</p>
 
 
-------------<span style="color:red">华丽丽的分割线</span>------------
+<span style="color:red">------------华丽丽的分割线------------</span>
 
-<p>接着我们就会思考switch组件是否可以添加一些默认值，进入页面默认就是打开的状态。</p>
+#### 4. 第四步，给轮子增加点初始值
 
-<p>也就是demo组件如何给父组件通信，告诉父组件我现在是打开的状态，这里可以借助添加属性的方法来实现</p>
+<p style="text-indent:2em;">接着我们就会思考switch组件是否可以添加一些默认值，进入页面默认就是打开的状态。</p>
+
+<p style="text-indent:2em;">也就是demo组件如何给父组件通信，告诉父组件我现在是打开的状态，这里可以借助添加属性的方法来实现</p>
 
 ```<gf-switch (onchange)="getSwitchVaule($event)" [default]=true>```
 
-<p>[defalut]是一个自定义的属性，并且传值true，可在父组件轮子中去获取demo的传值</p>
+<p style="text-indent:2em;">[defalut]是一个自定义的属性，并且传值true，可在父组件轮子中去获取demo的传值</p>
 
 ```typescript
 //...
@@ -195,7 +200,10 @@ export class SwitchComponent implements OnInit {
 
 ```
 
-<p>现在switch组件已经可以支持点击打开或者关闭开关，并且可接收一个默认开关值。至于switch的禁用状态disabled也同理可实现，这个大家就自行思考啦~道理都是一样的啦~~~</p>
+#### 5. 最后一点，自行思考！！！
+
+<p style="text-indent:2em;">现在switch组件已经可以支持点击打开或者关闭开关，并且可接收一个默认开关值。至于switch的禁用状态disabled也同理可实现，这个大家就自行思考啦~道理都是一样的啦~~~</p>
+
 
 咱们下篇component详细再聊啦~~~再贱！！！
 ![表情包2](/images/表情包/pic3.jpg)
