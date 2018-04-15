@@ -1,5 +1,5 @@
 ---
-title: angular-组件篇
+title: ng4(3)-angular-组件篇
 date: '2018-04-15 14:00:00'
 categories: [
 angular

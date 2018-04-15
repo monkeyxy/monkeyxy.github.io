@@ -1,5 +1,5 @@
 ---
-title: angular轻入门
+title: ng4(0)-angular轻入门
 date: '2018-03-28 16:00:00'
 categories: [
 angular
@@ -18,9 +18,8 @@ author: xy
 
 > * 路由
 > * 指令
-> * 数据绑定
-> * 模块
 > * 组件
+> * 模块
 > * 服务
 > * TypeScript 简介
 

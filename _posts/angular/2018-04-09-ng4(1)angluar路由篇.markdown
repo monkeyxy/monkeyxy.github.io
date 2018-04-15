@@ -1,5 +1,5 @@
 ---
-title: angular路由篇
+title: ng4(1)-angular路由篇
 date: '2018-04-09 10:00:00'
 categories: [
 angular
