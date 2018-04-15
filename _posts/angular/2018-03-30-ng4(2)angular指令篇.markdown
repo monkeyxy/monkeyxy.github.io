@@ -53,9 +53,15 @@ author: xy
 
 <p style="text-indent:2em;">当内置指令还不能满足实际业务场景时，Angular中提供了自定义指令来满足特定的场景需求</p>
 
+<p style="text-indent:2em;">举个栗子：给用自定义属性的内容加点特殊处理</p>
+
+#### 1. 第一步，创建一个directive文件
+
 ```ng generate directive child-directive```
 
 <p style="text-indent:2em;">此时app.module中已增加ChildDirectiveDirective指令</p>
+
+#### 2. 第二步，在模块中引入我们定义的指令
 
 ```typescript
 //...
@@ -69,10 +75,7 @@ author: xy
 })
 //...
 ```
-
-<!-- 每个组件都有用output和input属性 -->
-
-<p style="text-indent:2em;">举个栗子：给用自定义属性的内容加点特殊处理</p>
+#### 3. 第三步，撸出directive的逻辑
 
 ```typescript
 import { Directive,ElementRef,Renderer2,Input } from '@angular/core';
@@ -91,6 +94,9 @@ export class ChildDirectiveDirective {
   }
 }
 ```
+
+#### 4. 第四步，在html中引用该自定义属性
+
 <p style="text-indent:2em;">组件中添加该指令,可自定义展示的样式</p>
 
 ```<div [color]='"red"'>测试下咯</div>```
@@ -165,10 +171,10 @@ export class SwitchDemo {
 
 <p style="text-indent:2em;">使用&lt;switch&gt;标签名，可以实例化一个switch组件。</p>
 
-<p style="text-indent:2em;">获取到父组件通过@Output提供的onchange方法，在这个方法中，&lt;switch&gt;父组件处理switch开关的值，处理后的值。通过emit（）方法返还给demo组件中```public getSwitchVaule(v)```</p>
+<p style="text-indent:2em;">获取到父组件通过@Output提供的onchange方法，在这个方法中，&lt;switch&gt;父组件处理switch开关的值，处理后的值。通过emit（）方法返还给demo组件中的 public getSwitchVaule(v) 方法中</p>
 
 
-<span style="color:red">------------华丽丽的分割线------------</span>
+<span style="color:red">------------------------华丽丽的分割线------------------------</span>
 
 #### 4. 第四步，给轮子增加点初始值
 
@@ -176,7 +182,7 @@ export class SwitchDemo {
 
 <p style="text-indent:2em;">也就是demo组件如何给父组件通信，告诉父组件我现在是打开的状态，这里可以借助添加属性的方法来实现</p>
 
-```<gf-switch (onchange)="getSwitchVaule($event)" [default]=true>```
+```<switch (onchange)="getSwitchVaule($event)" [default]=true>```
 
 <p style="text-indent:2em;">[defalut]是一个自定义的属性，并且传值true，可在父组件轮子中去获取demo的传值</p>
 
