@@ -19,11 +19,13 @@ author: xy
 NgClass:接收一个对象，key为class名，value为值，表示是否用改样式
 
 ```<p [ngClass]="{'fadeIn'}">example</p>```
+
 ```<p [ngClass]="{'fadeIn':!hidden}">example</p>```
 
 NgStyle:设置dom元素的css属性，可以动态的
 
 ```<div [ngStyle]="{'color':'#999'}">写样式的东西咯</div>```
+
 ```<div [ngStyle]="{'color':gray?'#999':'#000'}">写样式的东西咯</div>```
 
 NgFor:创建dom元素，类似ng1中的ng-repeat
@@ -156,9 +158,18 @@ export class SwitchDemo {
 }
 ```
 
-看到这是否还会一脸懵逼？？？我们来解读下实现的过程。使用&lt;switch&gt;标签名，可以实例化一个switch组件，并且获取到父组件通过@Output提供的onchange方法，在这个方法中，&lt;switch&gt父组件处理switch开关的值，处理后的值，通过emit（）方法返还给demo组件中```public getSwitchVaule(v)```
+看到这是否还会一脸懵逼？？？我们来解读下实现的过程。
 
-接着我们就会思考switch组件是否可以添加一些默认值，进入页面默认就是打开的状态，也就是demo组件如何给父组件通信，告诉父组件我现在是打开的状态，这里可以借助添加属性的方法来实现
+使用&lt;switch&gt;标签名，可以实例化一个switch组件。
+
+获取到父组件通过@Output提供的onchange方法，在这个方法中，&lt;switch&gt父组件处理switch开关的值，处理后的值。通过emit（）方法返还给demo组件中```public getSwitchVaule(v)```
+
+
+-------华丽丽的分割线-------
+
+接着我们就会思考switch组件是否可以添加一些默认值，进入页面默认就是打开的状态。
+
+也就是demo组件如何给父组件通信，告诉父组件我现在是打开的状态，这里可以借助添加属性的方法来实现
 
 ```<gf-switch (onchange)="getSwitchVaule($event)" [default]=true>```
 
