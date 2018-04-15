@@ -8,27 +8,24 @@ layout: post
 author: xy
 ---
 
-## Angular —— 指令
-
 Angular的指令分三种
 
  1. 组件：用于构建ui组件
  2. 属性指令：用户改变组件的外观或行为
  3. 结构指令：用于动态删除或删除dom元素、改变dom布局
 
-
-**结构指令**
+<h2 style="text-align:center;color:red">结构指令</h2>
 
 NgClass:接收一个对象，key为class名，value为值，表示是否用改样式
-```html
-    <p [ngClass]="{'fadeIn'}">example</p>
-    <p [ngClass]="{'fadeIn':!hidden}">example</p>
-```
+
+```<p [ngClass]="{'fadeIn'}">example</p>```
+```<p [ngClass]="{'fadeIn':!hidden}">example</p>```
+
 NgStyle:设置dom元素的css属性，可以动态的
-```html
-<div [ngStyle]="{'color':'#999'}">写样式的东西咯</div>
-<div [ngStyle]="{'color':gray?'#999':'#000'}">写样式的东西咯</div>
-```
+
+```<div [ngStyle]="{'color':'#999'}">写样式的东西咯</div>```
+```<div [ngStyle]="{'color':gray?'#999':'#000'}">写样式的东西咯</div>```
+
 NgFor:创建dom元素，类似ng1中的ng-repeat
 ```javascript
     const list = [ {name:'a'} ,{name:'b'}]
@@ -50,7 +47,7 @@ NgIf:设置dom元素的展示或隐藏
 
 --------------
 
- **自定义属性指令**
+<h2 style="text-align:center;color:red">自定义属性指令</h2>
 
 当内置指令还不能满足实际业务场景时，Angular中提供了自定义指令来满足特定的场景需求
 
@@ -97,7 +94,7 @@ export class ChildDirectiveDirective {
 ```<div [color]='"red"'>测试下咯</div>```
 
 --------------
-**组件**
+<h2 style="text-align:center;color:red">组件</h2>
 
 是时候祭出我的超简单基础组件第一套！！！switch组件的实现
 
