@@ -1,5 +1,5 @@
 ---
-title: 同步异步问题
+title: js同步异步问题
 date: '2018-03-15 09:00:00'
 categories: [
 Front

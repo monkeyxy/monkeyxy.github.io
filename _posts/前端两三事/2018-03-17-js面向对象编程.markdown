@@ -1,5 +1,5 @@
 ---
-title: JavaScript的面向编程问题
+title: Js面向编程问题
 date: '2018-03-17 15:30:00'
 categories: [
 Front

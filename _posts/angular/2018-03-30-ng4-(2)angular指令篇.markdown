@@ -1,5 +1,5 @@
 ---
-title: angular--指令篇
+title: angular指令篇
 date: '2018-03-30 10:00:00'
 categories: [
 angular
