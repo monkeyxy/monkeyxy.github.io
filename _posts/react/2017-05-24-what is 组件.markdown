@@ -3,7 +3,7 @@ title: React篇4--React的一等公民——组件
 date: '2017-05-24 13:49:00'
 updateAt: '2017-6-01 17:00:00'
 categories: [
-front
+react
 ]
 layout: post
 author: xy

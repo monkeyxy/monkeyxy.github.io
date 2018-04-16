@@ -3,7 +3,7 @@ title: React篇3--React的组件间的数据通信
 date: '2017-05-22 17:00:00'
 updateAt: '2017-5-24 13:00:00'
 categories: [
-front
+react
 ]
 layout: post
 author: xy

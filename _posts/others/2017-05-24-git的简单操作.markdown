@@ -2,7 +2,7 @@
 title: other篇1--Git操作
 date: '2017-05-24 16:33:00'
 categories: [
-front
+others
 ]
 layout: post
 author: xy

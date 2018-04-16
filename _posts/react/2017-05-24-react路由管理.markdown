@@ -2,7 +2,7 @@
 title: React篇6--react的路由管理
 date: '2017-05-24 20:11:00'
 categories: [
-front
+react
 ]
 layout: post
 author: xy

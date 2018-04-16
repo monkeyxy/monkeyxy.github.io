@@ -2,7 +2,7 @@
 title: Vue的生命周期
 date: '2017-12-10 16:00:00'
 categories: [
-front
+vue
 ]
 layout: post
 author: xy

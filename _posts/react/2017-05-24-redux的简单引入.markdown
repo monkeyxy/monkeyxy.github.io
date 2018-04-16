@@ -2,7 +2,7 @@
 title: React篇5--Redux的引入
 date: '2017-05-24 17:23:00'
 categories: [
-front
+react
 ]
 layout: post
 author: xy

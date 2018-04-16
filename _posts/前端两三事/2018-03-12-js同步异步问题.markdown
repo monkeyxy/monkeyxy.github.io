@@ -2,7 +2,7 @@
 title: js同步异步问题
 date: '2018-03-15 09:00:00'
 categories: [
-Front
+ 前端两三事
 ]
 layout: post
 author: xy
