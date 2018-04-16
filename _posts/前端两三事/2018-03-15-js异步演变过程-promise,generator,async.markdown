@@ -2,7 +2,7 @@
 title: promise,generator,async的演变过程
 date: '2018-03-05 22:00:00'
 categories: [
-Front
+前端两三事
 ]
 layout: post
 author: xy

@@ -2,7 +2,7 @@
 title: Js面向编程问题
 date: '2018-03-17 15:30:00'
 categories: [
-Front
+前端两三事
 ]
 layout: post
 author: xy
