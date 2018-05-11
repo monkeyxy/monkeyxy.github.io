@@ -2,7 +2,7 @@
 title: 那些年移动端踩过的坑
 date: '2017-12-19 14:00:00'
 categories: [
-    work
+    前端两三事
 ]
 layout: post
 author: xy

@@ -1,8 +1,8 @@
 ---
-title: other篇1--Git操作
+title: Git操作
 date: '2017-05-24 16:33:00'
 categories: [
-others
+前端两三事
 ]
 layout: post
 author: xy

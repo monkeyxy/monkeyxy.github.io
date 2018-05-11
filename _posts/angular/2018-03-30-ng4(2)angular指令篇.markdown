@@ -114,6 +114,7 @@ export class ChildDirectiveDirective {
 
 <img style="width: 40%" src="/images/angular/4.jpg">
 
+> * switch.component.html
 ```html
 <span>
   <label class="iSwitch">
@@ -125,6 +126,8 @@ export class ChildDirectiveDirective {
 <p style="text-indent:2em;">具体css样式怎么撸的我就不贴了，自行撸！下面主要讲组件的实现</p>
 
 #### 2. 第二步，实现switch轮子的逻辑
+
+> * switch.component.ts
 ```typescript
 import { Component, OnInit, Output, EventEmitter, Input, ViewChild,ElementRef,Renderer2 } from '@angular/core';
 
@@ -155,8 +158,11 @@ export class SwitchComponent implements OnInit {
 
 <p style="text-indent:2em;">使用轮子的代码，使用的方法：</p>
 
+> * demo.component.html
+
 ```<switch (onchange)="getSwitchVaule($event)"></switch>```
 
+> * demo.component.ts
 ```typescript
 export class SwitchDemo {
   public getSwitchVaule(v){//页面中的onchange方法是父组件提供的

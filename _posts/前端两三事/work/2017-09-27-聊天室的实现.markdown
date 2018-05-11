@@ -2,7 +2,7 @@
 title: 聊天室的相关技术及实现
 date: '2017-09-27 14:17:00'
 categories: [
-    work
+    前端两三事
 ]
 layout: post
 author: xy

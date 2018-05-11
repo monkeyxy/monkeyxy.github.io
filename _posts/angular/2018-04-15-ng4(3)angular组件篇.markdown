@@ -10,4 +10,35 @@ author: xy
 
 ### Component
 
+组件化是前端的大趋势。组件强调复用，代码模块化产出。废话不多说，来看下angular2的组件化是怎么实现的吧~
+
+前面指令篇中撸过一小串关于ng2组件的写法，这篇主要针对组件进行研究
+
+> * hello.component.ts
+```typescript
+@Component({
+    selector:'hello',
+    templateUrl:'<p> {{something}} </p>',
+    styleUrls:['...']
+})
+
+export class PickerComponent implements OnInit {
+  private something:any
+  constructor() {
+      this.something = 'hello world!'
+   }
+  ngOnInit() {
+  }
+}
+```
+> * xxx.html
+
+```html
+<hello>{{somthing}}</hello> 
+<!--渲染的结果
+    <hello><p>hello world!</p><hello>
+-->
+```
+@Component 装饰器
+
 

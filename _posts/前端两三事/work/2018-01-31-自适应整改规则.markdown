@@ -2,7 +2,7 @@
 title: 图片自适应的整改规则
 date: '2018-01-31 15:00:00'
 categories: [
-    work
+    前端两三事
 ]
 layout: post
 author: xy

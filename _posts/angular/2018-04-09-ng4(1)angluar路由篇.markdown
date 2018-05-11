@@ -44,6 +44,7 @@ export const appRoutes:Routes=[
 ```
 ![子路由的区别](/images/angular/2.jpg)
 
+child组件是通过一级路由被载入到homeComponent的html模板的&lt;router-outlet&gt;下方
 
 ```xml
   <div routerLink="/example">栗子</div>
