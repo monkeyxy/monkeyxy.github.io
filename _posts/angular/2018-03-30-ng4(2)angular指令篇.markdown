@@ -128,6 +128,7 @@ export class ChildDirectiveDirective {
 #### 2. 第二步，实现switch轮子的逻辑
 
 > * switch.component.ts
+
 ```typescript
 import { Component, OnInit, Output, EventEmitter, Input, ViewChild,ElementRef,Renderer2 } from '@angular/core';
 
@@ -154,6 +155,7 @@ export class SwitchComponent implements OnInit {
   }
 }
 ```
+
 #### 3. 第三步，使用轮子的方式
 
 <p style="text-indent:2em;">使用轮子的代码，使用的方法：</p>
