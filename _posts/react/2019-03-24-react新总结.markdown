@@ -1,0 +1,168 @@
+---
+title: React新总结
+date: '2018-03-24 15:03:00'
+updateAt: '2018-03-24 15:03:00'
+categories: [
+react
+]
+layout: post
+author: xy
+---
+
+
+# What's React?
+
+>A Javascript library for building user interfaces
+——用于构建用户界面的JavaScript库
+
+## 第一个关键词：用户界面
+
+如果你写过angular或者熟悉过MVC（Model-View-Controller）概念的话，那么React组件就相当于是MVC里面的view，负责视图层。
+
+react.js帮助我们把界面分成各个独立的组件，每个组件都可以互相组合、嵌套成界面。
+
+## 第二个关键词：组件化
+
+React的本质是前端组件化框架。
+
+组件化的两个特点：封装、复用。
+
+```
+class MyTasks extends Componet{
+    constructor(props){
+        super(props)
+        this.state = {
+            list:[]
+        }
+    }
+    add(something){
+        const cur = this.state.list
+        this.setState({
+            list:cur.push(something)
+        })
+    }
+    render(){
+        return (
+            <div>
+                <Tasks lists = {this.state.list}/>
+            <div/>
+        )
+    }
+}
+//以上MyTasks的写法就是一个组件的封装过程（视图、数据、逻辑）
+//<Tasks/>组件的引用的主要核心是props的传递和组件的复用
+```
+
+## 第三个关键词：虚拟DOM
+
+频繁的操作dom是很昂贵的，React的虚拟DOM将页面中的ui转换为js对象的形式来表示，每次数据模型发生变化，虚拟DOM节点树就会重新构建，react再依赖diff算法来与上一次的虚拟DOM节点树进行比较，只有不同的地方才进行重新计算，等所有的变化都批量处理后，才会进行DOM更新。
+
+## 第四个关键词：JSX
+
+JSX是JavaScript和XML结合的一种格式。
+
+不是React独有的，jsx是一个标准，其他项目也可以使用。
+
+jsx语法是无法被浏览器所解析，通过babel编译，转换成js运行。
+
+
+***
+
+
+
+# JSX
+
+JavaScript和XML的合体。
+
+JSX是一种语法糖，经过babel转换成js再运行。
+```
+let component = <div>hello world!</div>
+```
+这样长相的，称之为 JSX 。
+
+那么，jsx是如何解析的?
+
+来人！！上代码！
+
+![pic1](/images/react/pic1.png)
+
+```
+import React, {component} from ‘react’;//有木有人觉得奇怪过，全文都没有用到React,这里还引入来作甚？？？
+class Home extends Component{
+    render(){
+       return(
+             <div>
+                <h1>这是个标题！</h1>
+                <p className=’title'>这也是个标题！</p>
+            </div>
+        )
+    }
+}
+```
+
+引入的React在全局中，经过babel转换下，调用了React.createElement()，转换为以下的形式
+
+```
+React.createElement(
+    ‘div’,
+    null
+    React.createElement(‘h1’,null,’这是个标题！’),
+    React.createElement(‘p’,{className:’title’},’这也是个标题！')
+)
+```
+
+//当然jsx语法除了以上的标签，还可以展示js表达式，判断，循环，事件绑定等。这里不做过多的叙述
+
+//React.createElement 传参形式
+
+React.createElement(tag, property,child)
+
+React.createElement(tag, property,[…])
+
+
+```
+//打印Home元素
+{
+    attributes:null,
+    children:[
+        {
+            attributes:null,
+            children:[],
+            key:undefined,
+            nodeName:’h1'
+        },
+        {
+            attributes:{className:’title’},
+            children:[],
+            key:undefined,
+            nodeName:’p'
+        },
+    ],
+    key:undefined,    
+    nodeName:'div'
+}
+```
+
+以上的数据结构，不难看出，jsx语法糖经过babel编译后，行程一种js对象，这个对象也就是虚拟DOM，使用虚拟DOM进行页面更高效的渲染。
+
+到这一步，我们又开始提出新的疑问了，那这个虚拟DOM是如何转换为真实DOM的？请看下一章，Render！！~~~
+
+
+
+
+# React的生命周期
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
